@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": "./",
+    "paths": {
+      "svg/*": ["src/svg/*"],
+      "@components/*": ["./app/components/*"],
+      "@ui/*": ["./app/components/ui/*"],
+      "@context/*": ["./app/contexts/*"],
+      "@utils/*": ["./app/utils/*"],
+      "@hooks/*": ["./app/hooks/*"],
+      "@redux/*": ["./app/store/redux/*"],
+      "@store/*": ["./app/store/*"],
+      "@helpers/*": ["./app/helpers/*"],
+      "@css/*": ["./app/styles/css/*"],
+      "@fonts/*": ["./app/fonts/*"],
+      "@scss/*": ["./app/styles/scss/*"],
+      "@styled-components/*": ["./app/styles/styled-components/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
