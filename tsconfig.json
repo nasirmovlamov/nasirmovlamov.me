@@ -17,8 +17,8 @@
     "baseUrl": "./",
     "paths": {
       "svg/*": ["src/svg/*"],
-      "@components/*": ["./app/components/*"],
-      "@ui/*": ["./app/components/ui/*"],
+      "@components/*": ["app/components/*"],
+      "@ui/*": ["app/components/ui/*"],
       "@context/*": ["./app/contexts/*"],
       "@utils/*": ["./app/utils/*"],
       "@hooks/*": ["./app/hooks/*"],
@@ -28,7 +28,9 @@
       "@css/*": ["./app/styles/css/*"],
       "@fonts/*": ["./app/fonts/*"],
       "@scss/*": ["./app/styles/scss/*"],
-      "@styled-components/*": ["./app/styles/styled-components/*"]
+      "@styled-components/*": ["./app/styles/styled-components/*"],
+      "@routes/*": ["./app/routes/*"],
+      "@data/*": ["./app/data/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
