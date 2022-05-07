@@ -1,16 +1,39 @@
 import styled, { StyledComponentInnerAttrs, StyledComponentProps } from "styled-components";
 
-export const StyledFRow = styled.div<{center:boolean , spaceBetween:boolean, spaceAround:boolean, spaceEvenly:boolean, flexEnd:boolean, flexStart:boolean }>`
-  flex-direction: row;
-  justify-content: ${({center , spaceBetween , spaceAround , spaceEvenly , flexEnd , flexStart}) => center ? 'center' || spaceBetween ? 'space-between' : spaceAround ? 'space-around' : spaceEvenly ? 'space-evenly' : flexEnd ? 'flex-end' : flexStart ? 'flex-start' : 'flex-start' : 'flex-start'};
+export const StyledSpacing = styled.div<any>`
+  margin-top: ${({marginTop}) => marginTop ? marginTop : "0"};
+  margin-bottom: ${({marginBottom}) => marginBottom ? marginBottom : "0"};
+  margin-left: ${({marginLeft}) => marginLeft ? marginLeft : "0"};
+  margin-right: ${({marginRight}) => marginRight ? marginRight : "0"};
+  padding-top: ${({paddingTop}) => paddingTop ? paddingTop : "0"};
+  padding-bottom: ${({paddingBottom}) => paddingBottom ? paddingBottom : "0"};
+  padding-left: ${({paddingLeft}) => paddingLeft ? paddingLeft : "0"};
+  padding-right: ${({paddingRight}) => paddingRight ? paddingRight : "0"};
+`
+
+export const StyledContainer = styled.div<any>`
+  width: ${({width}) => width ? width : "100%"};
+  height: ${({height}) => height ? height : "auto"};
+  display: ${({flex , grid , }) => flex ? 'flex' || grid ? "grid" : "initial" : "initial"};
 
 `;
 
-export const StyledFColumn = styled.div`
+
+export const StyledFRow = styled.div<any>`
+  flex-direction: row;
+  justify-content: ${({justifyContent}) => justifyContent ? justifyContent : 'flex-start'};
+  display: flex;
+`;
+
+export const StyledFColumn = styled.div<any>`
+  display: flex;
   flex-direction: column;
+  width: ${({width}) => width ? width : "100%"};
+  height: ${({height}) => height ? height : "auto"};
 `;
 
 export const StyledCenter = styled.div`
+  display: flex;
   justify-content: center;
   align-items: center;
 `;
@@ -20,6 +43,8 @@ export const StyledFlex = styled.div<any>`
   display: flex;
   justify-content: ${({center , spaceBetween , spaceAround , spaceEvenly , flexEnd , flexStart}) => center ? 'center' : spaceBetween ? 'space-between' : spaceAround ? 'space-around' : spaceEvenly ? 'space-evenly' : flexEnd ? 'flex-end' : flexStart ? 'flex-start' : 'flex-start'};
   width: 100%;
+  ${StyledSpacing}
+
 `;
 
 
@@ -36,3 +61,5 @@ export const StyledPadding = styled.div<{left:number, right:number, top:number, 
   padding-top: ${({top}) => top} + "px";
   padding-bottom: ${({bottom}) => bottom} + "px";
 `;
+
+

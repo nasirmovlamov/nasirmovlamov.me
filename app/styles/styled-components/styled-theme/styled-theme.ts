@@ -12,18 +12,12 @@ export const lightTheme = {
   // backgroundMain: '#00090e',
 
   colors: {
-    // black_1: colors.black_1,
-    // black_2: colors.black_2,
-    // black_3: colors.black_3,
-    // gray_1: colors.gray_1,
-    // gray_2: colors.gray_2,
-    // gray_3: colors.gray_3,
-    // gray_4: colors.gray_4,
-    // gray_5: colors.gray_5,
-    // gray_6: colors.gray_6,
-    // white_1: colors.white_1,
-    // white_2: colors.white_2,
-    // blue_1: colors.blue_1,
+    black_1: colors.black_1,
+    gray_1: colors.gray_1,
+    gray_2: colors.gray_2,
+    white_1: colors.white_1,
+    white_2: colors.white_2,
+    blue_1: colors.blue_1,
     // blue_2: colors.blue_2,
     // blue_3: colors.blue_3,
 
@@ -63,12 +57,35 @@ export const lightTheme = {
   },
 
   titles: {
-    // title1: colors.black_1,
-    // title2: colors.blue_2,
-    // title3: colors.gray_2,
+    title: colors.white_1,
+    subTitle: colors.white_2,
+    hover:{
+      title: colors.white_1,
+      subTitle: colors.white_2,
+    },
+    focus:{
+      title: colors.white_1,
+      subTitle: colors.white_2,
+    }
   },
 
   texts: {
+    body:colors.white_2,
+    side:colors.gray_2,
+    quote:colors.gray_2,
+    link:colors.blue_1,
+    hover :{
+      body:colors.white_2,
+      side:colors.gray_2,
+      quote:colors.gray_2,
+      link:colors.blue_1,
+    },
+    focus:{
+      body:colors.white_2,
+      side:colors.white_1,
+      quote:colors.gray_2,
+      link:colors.blue_1,
+    }
     // text1: colors.white_1,
     // text2: colors.gray_1,
     // text3: colors.gray_3,
@@ -89,9 +106,7 @@ export const lightTheme = {
     // sidecolor4: colors.orange_2,
   },
 
-  title_hover: {
-    // hover1: colors.gray_2,
-  },
+
 
   text_hover: {
     // hover1: colors.orange_1,
@@ -116,6 +131,34 @@ export const lightTheme = {
     // hover2: boxshadows.bx_shadow_dark5,
     // hover3: boxshadows.bx_shadow_dark6,
   },
+
+  font:{
+    sizes:{
+      title: '3.2rem',
+      subTitle: '1.05rem',
+      side: '1rem',
+      quote: '1rem',
+      link: '1rem',
+      hover: {
+        body: '1rem',
+        title: '1rem',
+        subTitle: '1rem',
+        side: '1rem',
+        quote: '1rem',
+        link: '1rem',
+      },
+      focus: {
+        body: '1rem',
+        title: '1rem',
+        subTitle: '1rem',
+        side: '1rem',
+        quote: '1rem',
+        link: '1rem',
+      }
+    }
+
+
+  }
 }
 
 export const darkTheme = {
@@ -224,6 +267,34 @@ export const darkTheme = {
     // hover2: boxshadows.bx_shadow_dark5,
     // hover3: boxshadows.bx_shadow_dark6,
   },
+
+  font:{
+    sizes:{
+      title: '1rem',
+      subTitle: '1rem',
+      side: '1rem',
+      quote: '1rem',
+      link: '1rem',
+      hover: {
+        body: '1rem',
+        title: '1rem',
+        subTitle: '1rem',
+        side: '1rem',
+        quote: '1rem',
+        link: '1rem',
+      },
+      focus: {
+        body: '1rem',
+        title: '1rem',
+        subTitle: '1rem',
+        side: '1rem',
+        quote: '1rem',
+        link: '1rem',
+      }
+    }
+
+
+  }
 }
 
 export type ThemeType = typeof lightTheme

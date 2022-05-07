@@ -1,13 +1,12 @@
 import { AboutMe } from '@components/modules/aboutme/aboutme.module'
 import type { NextPage } from 'next'
-import { Sty_Contact } from '@styled-components/Contact.styled'
 
-const Home: NextPage = () => {
+const Dashboard: NextPage = () => {
   return (
     <>
-       <AboutMe/>
+       Dashboard
     </>
   )
 }
 
-export default Home
+export default Dashboard

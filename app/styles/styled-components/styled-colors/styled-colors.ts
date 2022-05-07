@@ -1,9 +1,14 @@
-export const black_1 = '#111111'
+export const black_1 = '#101110'
+
+export const gray_1 = 'rgb(34 34 34)'
+export const gray_2 = '#888888'
+
+export const white_1 = '#FFFFFF'
+export const white_2 = '#EAEBEB'
+
+export const blue_1 = "#5EA4FA"
 
 
-
-// export const gray_1 = '#B4B5B7'
-// export const gray_2 = '#A3A6A8'
 // export const gray_3 = '#949597'
 // export const gray_4 = '#6c6d6f'
 // export const gray_5 = '#49505B'

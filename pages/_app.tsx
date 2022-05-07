@@ -3,14 +3,16 @@ import '@scss/scss-export.scss'
 import "@css/css-export.css"
 
 import type { AppProps } from 'next/app'
-import { Header_Module } from '@components/modules/header/header.module'
-import { Layout } from '@components/layout/Layout'
+import FooterModule from '@components/modules/footer/footer.module'
+import { HeaderModule } from '@components/modules/header/header.module'
+import { Layout } from '@components/layout/layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Layout>
-      <Header_Module/>
+      <HeaderModule/>
       <Component {...pageProps} />
+      <FooterModule/>
     </Layout>
   )
 }
