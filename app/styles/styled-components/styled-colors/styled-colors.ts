@@ -8,6 +8,15 @@ export const white_2 = '#EAEBEB'
 
 export const blue_1 = "#5EA4FA"
 
+export const inverse_black_1 = '#F9FAFB'
+
+export const inverse_gray_1 = '#333238'
+export const inverse_gray_2 = '#444444'
+
+export const inverse_white_1 = '#010100'
+export const inverse_white_2 = '#333238'
+
+export const inverse_blue_1 = "#5EA4FA"
 
 // export const gray_3 = '#949597'
 // export const gray_4 = '#6c6d6f'

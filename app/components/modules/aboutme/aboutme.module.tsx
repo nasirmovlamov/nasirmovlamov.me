@@ -1,7 +1,10 @@
 import { StyledFColumn, StyledFlex } from '@styled-components/styled-components/styled-containers'
 import { StyledHeader, StyledSideParagraph, StyledSubHeader } from '@styled-components/styled-components/styled-micro-components'
 
+import Image from 'next/image'
 import React from 'react'
+import { StyledPersonImage } from './aboutme.styled'
+import nasirmovlamov from '../../../styles/media/images/nasirmovlamov.jpeg'
 
 type Props = {}
 
@@ -14,12 +17,18 @@ export const AboutMe = (props: Props) => {
               Software Engineer at A2Z Technologies
             </StyledSubHeader>
             <StyledSideParagraph>
-              Trying to build a faster web and write clean code.   <em>Physics</em>  and <em> Martial arts</em>  enthusiast. Learning/Teaching about data structures, algoritms, and React / Next.js.
+              Automated person for problem solving:) <br/>
+              <em>Physics</em>  and <em> Martial arts</em>  enthusiast. <br/>
+              Learning/Teaching about javascript, typescript, linux and React / Next.js.<br/>
+
+
             </StyledSideParagraph>
         </StyledFColumn>
 
         <StyledFColumn  width="100px">
-            <h1>About Me</h1>
+            <StyledPersonImage>
+              <Image src={nasirmovlamov} alt="image of Nasir Movlamov"/>
+            </StyledPersonImage>
         </StyledFColumn>
     </StyledFlex>
   )

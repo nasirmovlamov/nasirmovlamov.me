@@ -12,10 +12,17 @@ export const StyledSideParagraph = styled.p<any>`
     margin: 0;
 `;
 
-export const StyledHeaderLink = styled.p<any>`
+
+export const SytledText = styled.span<any>`
+  color: ${({ theme , gray_1 , gray_2, white_2 }) => white_2 ? theme.colors.white_2 : gray_1 ?  theme.colors.gray_1 : gray_2 ? theme.colors.gray_2 : theme.colors.gray_2 };
+  font-weight: ${({theme, bold}) => bold ? "600" : "initial"};
+`;
+
+export const StyledHeaderLink = styled.span<any>`
   display: inline;
   font-size: ${({ theme }) => theme.font.sizes.link};
   color: ${(props) => props.bold ? props.theme.colors.white_2 : props.theme.colors.gray_2};
+  font-weight: ${(props) => props.bold ? 600 : 'initial'};
   margin: 0;
   padding: 10px 15px;
   cursor: pointer;
@@ -45,7 +52,5 @@ export const StyledHr = styled.hr<any>`
   margin: 0;
   width: ${( props ) => props.width || "100%"};
   height: ${(props) =>  props.height || "1px"};
-  margin-bottom: 20px;
   background-color: ${({ theme }) => theme.colors.gray_1};
-  
 `;

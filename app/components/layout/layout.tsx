@@ -1,24 +1,16 @@
-import React, { ReactElement, ReactFragment, useState } from 'react';
-import { darkTheme, lightTheme } from '@styled-components/styled-theme/styled-theme';
+import React, { ReactElement, ReactFragment, useContext, useState } from 'react';
 
-import { GlobalStyle } from '@styled-components/styled-global';
-import { Sty_Layout } from './layout.style';
-import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import { CustomThemeProvider } from '@store/context/theme.context';
 
 type Props = {
   children: ReactFragment;
 };
 
 export const Layout = ({ children }: Props) => {
-  const [theme, setTheme] = useState(lightTheme);
 
   return (
-    <StyledThemeProvider theme={theme}>
-      <GlobalStyle />
-
-      <Sty_Layout>
+    <CustomThemeProvider>
         {children}
-      </Sty_Layout>
-    </StyledThemeProvider>
+    </CustomThemeProvider>
   );
 };

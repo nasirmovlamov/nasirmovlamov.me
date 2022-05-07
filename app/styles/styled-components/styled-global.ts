@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle<Props>`
   }
 
   body {
-    background-color: ${({ theme }) => theme.body};
+    background-color: ${({ theme }) => theme.colors.black_1};
     font-size: 1rem;
   }
 

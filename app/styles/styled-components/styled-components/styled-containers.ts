@@ -1,21 +1,11 @@
-import styled, { StyledComponentInnerAttrs, StyledComponentProps } from "styled-components";
-
-export const StyledSpacing = styled.div<any>`
-  margin-top: ${({marginTop}) => marginTop ? marginTop : "0"};
-  margin-bottom: ${({marginBottom}) => marginBottom ? marginBottom : "0"};
-  margin-left: ${({marginLeft}) => marginLeft ? marginLeft : "0"};
-  margin-right: ${({marginRight}) => marginRight ? marginRight : "0"};
-  padding-top: ${({paddingTop}) => paddingTop ? paddingTop : "0"};
-  padding-bottom: ${({paddingBottom}) => paddingBottom ? paddingBottom : "0"};
-  padding-left: ${({paddingLeft}) => paddingLeft ? paddingLeft : "0"};
-  padding-right: ${({paddingRight}) => paddingRight ? paddingRight : "0"};
-`
+import styled,  {StyledComponentInnerAttrs, StyledComponentProps, css} from "styled-components";
 
 export const StyledContainer = styled.div<any>`
   width: ${({width}) => width ? width : "100%"};
   height: ${({height}) => height ? height : "auto"};
   display: ${({flex , grid , }) => flex ? 'flex' || grid ? "grid" : "initial" : "initial"};
-
+  margin-top: ${({marginTop}) => marginTop? marginTop :"0"};
+  margin-bottom: ${({marginBottom}) => marginBottom? marginBottom :"0"};
 `;
 
 
@@ -39,13 +29,6 @@ export const StyledCenter = styled.div`
 `;
 
 
-export const StyledFlex = styled.div<any>`
-  display: flex;
-  justify-content: ${({center , spaceBetween , spaceAround , spaceEvenly , flexEnd , flexStart}) => center ? 'center' : spaceBetween ? 'space-between' : spaceAround ? 'space-around' : spaceEvenly ? 'space-evenly' : flexEnd ? 'flex-end' : flexStart ? 'flex-start' : 'flex-start'};
-  width: 100%;
-  ${StyledSpacing}
-
-`;
 
 
 export const StyledMargin = styled.div<{left:number, right:number, top:number, bottom:number}>`
@@ -63,3 +46,24 @@ export const StyledPadding = styled.div<{left:number, right:number, top:number, 
 `;
 
 
+export const StyledSpacing = styled.div<any>`
+  margin-top: ${({marginTop}) => marginTop ? marginTop : "0"};
+  margin-bottom: ${({marginBottom}) => marginBottom ? marginBottom : "0"};
+  margin-left: ${({marginLeft}) => marginLeft ? marginLeft : "0"};
+  margin-right: ${({marginRight}) => marginRight ? marginRight : "0"};
+  padding-top: ${({paddingTop}) => paddingTop ? paddingTop : "0"};
+  padding-bottom: ${({paddingBottom}) => paddingBottom ? paddingBottom : "0"};
+  padding-left: ${({paddingLeft}) => paddingLeft ? paddingLeft : "0"};
+  padding-right: ${({paddingRight}) => paddingRight ? paddingRight : "0"};
+`
+
+
+
+export const StyledFlex = styled.div<any>`
+  display: flex;
+  justify-content: ${({center , spaceBetween , spaceAround , spaceEvenly , flexEnd , flexStart}) => center ? 'center' : spaceBetween ? 'space-between' : spaceAround ? 'space-around' : spaceEvenly ? 'space-evenly' : flexEnd ? 'flex-end' : flexStart ? 'flex-start' : 'flex-start'};
+  width: 100%;
+  margin-top: ${({marginTop}) => marginTop? marginTop :"0"};
+  margin-bottom: ${({marginBottom}) => marginBottom? marginBottom :"0"};
+  /* ${props => StyledSpacing} */
+`;
