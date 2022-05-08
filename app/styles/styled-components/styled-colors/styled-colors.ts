@@ -2,6 +2,7 @@ export const black_1 = '#101110'
 
 export const gray_1 = 'rgb(34 34 34)'
 export const gray_2 = '#888888'
+export const gray_3 = 'rgb(34 34 34)'
 
 export const white_1 = '#FFFFFF'
 export const white_2 = '#EAEBEB'
@@ -12,6 +13,7 @@ export const inverse_black_1 = '#F9FAFB'
 
 export const inverse_gray_1 = '#333238'
 export const inverse_gray_2 = '#444444'
+export const inverse_gray_3 = 'lightgray'
 
 export const inverse_white_1 = '#010100'
 export const inverse_white_2 = '#333238'

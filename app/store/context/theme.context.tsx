@@ -17,8 +17,10 @@ export const CustomThemeProvider = ({children}:Props) => {
   const [darkMode , setDarkMode] = useState(false)
 
   const changeTheme = () => {
-    setDarkMode(!lightTheme)
-    localStorage.setItem('darkMode' , JSON.stringify(darkMode))
+    setDarkMode(!darkMode)
+    localStorage.setItem('darkMode' , JSON.stringify(!darkMode))
+    console.log("darkMode " ,darkMode)
+
   }
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export const CustomThemeProvider = ({children}:Props) => {
   }, [])
 
   return (
-    <CustomThemeContext.Provider value={{darkMode , setDarkMode}}>
+    <CustomThemeContext.Provider value={{darkMode , changeTheme}}>
       <StyledThemeProvider  theme={ darkMode ? lightTheme : darkTheme}>
         <GlobalStyle />
         <Sty_Layout>

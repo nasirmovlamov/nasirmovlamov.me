@@ -10,11 +10,12 @@ export const usePathBoolReturner = () => {
   const path = router.pathname
 
   const [isRoute, setIsRoute] = useState({
-    home: false,
+    home: true,
     guestbook: false,
     dashboard: false,
     blog: false,
     snippets: false,
+    about:false
   })
 
   const defaultFalseRoute = {
@@ -23,6 +24,7 @@ export const usePathBoolReturner = () => {
     dashboard: false,
     blog: false,
     snippets: false,
+    about:false
   }
 
 
@@ -58,13 +60,16 @@ export const usePathBoolReturner = () => {
           snippets: true,
         })
         break
+      case '/about':
+        setIsRoute({
+          ...defaultFalseRoute,
+          about: true,
+        })
+        break
       default:
         setIsRoute({
-          home: false,
-          guestbook: false,
-          dashboard: false,
-          blog: false,
-          snippets: false,
+          ...defaultFalseRoute,
+          home: true,
         })
         break
     }

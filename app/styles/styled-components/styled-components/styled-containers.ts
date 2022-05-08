@@ -65,5 +65,6 @@ export const StyledFlex = styled.div<any>`
   width: 100%;
   margin-top: ${({marginTop}) => marginTop? marginTop :"0"};
   margin-bottom: ${({marginBottom}) => marginBottom? marginBottom :"0"};
+  column-gap: ${({columnGap}) => columnGap? columnGap :"0"};
   /* ${props => StyledSpacing} */
 `;

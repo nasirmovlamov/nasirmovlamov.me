@@ -6,7 +6,7 @@ export const SvgThemeElement = ({theme}:{theme:boolean}) => {
   fill="none"
   stroke="currentColor"
 >
-  {!theme? (
+  {theme? (
     <path
     strokeLinecap="round"
     strokeLinejoin="round"

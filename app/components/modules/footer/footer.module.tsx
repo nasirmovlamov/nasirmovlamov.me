@@ -15,13 +15,13 @@ const FooterModule = (props: Props) => {
         <StyledHr />
       </StyledFlex>
 
-      <StyledFlex marginBottom="20px">
+      <StyledFlex marginBottom="20px" columnGap="10px">
         <SVG_spotify /> <SytledText bold white_2>Not Playing</SytledText>  - <SytledText gray_2> Spotify </SytledText>
       </StyledFlex>
-{/*
+
       <StyledFlex spaceBetween>
         <StyledFColumn width="260px">
-          <Link href="home" passHref>
+          <Link href="/" passHref>
             <StyledFooterLink>
               Home
             </StyledFooterLink>
@@ -38,12 +38,12 @@ const FooterModule = (props: Props) => {
               Contact
             </StyledFooterLink>
           </Link>
-
+{/*
           <Link href="newsletter" passHref>
             <StyledFooterLink>
               Newsletter
             </StyledFooterLink>
-          </Link>
+          </Link> */}
         </StyledFColumn>
 
         <StyledFColumn width="260px">
@@ -65,7 +65,7 @@ const FooterModule = (props: Props) => {
         </StyledFColumn>
 
         <StyledFColumn width="260px">
-          <Link href="uses" passHref>
+          {/* <Link href="uses" passHref>
             <StyledFooterLink>
               Uses
             </StyledFooterLink>
@@ -87,11 +87,11 @@ const FooterModule = (props: Props) => {
             <StyledFooterLink>
               Tweets
             </StyledFooterLink>
-          </Link>
+          </Link> */}
         </StyledFColumn>
 
 
-      </StyledFlex> */}
+      </StyledFlex>
     </StyledContainer>
   )
 }

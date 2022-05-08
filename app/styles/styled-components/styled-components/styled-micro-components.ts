@@ -28,7 +28,7 @@ export const StyledHeaderLink = styled.span<any>`
   cursor: pointer;
   border-radius: 10px;
   :hover {
-    background-color: ${({theme}) => theme.colors.gray_1};
+    background-color: ${({theme }) => theme.colors.gray_3 };
   }
 
 `;
@@ -42,9 +42,10 @@ export const StyledHeader = styled.h1<any>`
 `;
 
 export const StyledSubHeader = styled.h2<any>`
-  font-size: ${({ theme }) => theme.font.sizes.subTitle};
+  font-size: ${({ theme , fontSize }) => fontSize ? fontSize :  theme.font.sizes.subTitle};
   color: ${({ theme }) => theme.colors.white_2};
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: ${({marginTop})=> marginTop};
 `;
 
 export const StyledHr = styled.hr<any>`
