@@ -33,11 +33,11 @@ const FooterModule = (props: Props) => {
             </StyledFooterLink>
           </Link>
 
-          <Link href="contact" passHref>
+          {/* <Link href="contact" passHref>
             <StyledFooterLink>
               Contact
             </StyledFooterLink>
-          </Link>
+          </Link> */}
 {/*
           <Link href="newsletter" passHref>
             <StyledFooterLink>
