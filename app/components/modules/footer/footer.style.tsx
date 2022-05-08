@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const StyledFooterLink = styled.span<any>`
-  display: inline;
+export const StyledFooterLink = styled.div<any>`
+  /* display: inline; */
   font-size: ${({ theme }) => theme.font.sizes.link};
   color: ${(props) => props.bold ? props.theme.colors.white_2 : props.theme.colors.gray_2};
   font-weight: ${(props) => props.bold ? 600 : 'initial'};

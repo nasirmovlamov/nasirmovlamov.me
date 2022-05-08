@@ -47,24 +47,31 @@ const FooterModule = (props: Props) => {
         </StyledFColumn>
 
         <StyledFColumn width="260px">
-          <a href="https://twitter.com/nasirmovlamov"  target="_blank" rel="noreferrer">
+          <a  href="https://twitter.com/nasirmovlamov"  target="_blank" rel="noreferrer">
             <StyledFooterLink>
               Twitter
             </StyledFooterLink>
           </a>
-          <a href="https://github.com/nasirmovlamov"  target={"_blank"} rel="noreferrer">
+
+          <a  href="https://github.com/nasirmovlamov"  target={"_blank"} rel="noreferrer">
             <StyledFooterLink>
-              Github
+                Github
             </StyledFooterLink>
           </a>
+
           <a href="https://www.youtube.com/channel/UCmE8Psks_-SDw9iG1nn6MpQ"  target={"_blank"} rel="noreferrer">
             <StyledFooterLink>
-              Youtube
+                Youtube
             </StyledFooterLink>
           </a>
+
         </StyledFColumn>
 
         <StyledFColumn width="260px">
+          {/* <a href="https://leerob.io/" >
+            <StyledFooterLink>
+            </StyledFooterLink>
+          </a> */}
           {/* <Link href="uses" passHref>
             <StyledFooterLink>
               Uses
