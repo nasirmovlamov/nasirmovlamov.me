@@ -33,6 +33,12 @@ export const HeaderModule:React.FC = (props: Props) => {
             About Me
           </StyledHeaderLink>
         </Link>
+
+        {/* <Link href="blog" passHref>
+          <StyledHeaderLink bold={isRoute.blog}>
+          Blog
+          </StyledHeaderLink>
+        </Link> */}
 {/*
         <Link href="guestbook" passHref>
           <StyledHeaderLink bold={isRoute.guestbook}>
