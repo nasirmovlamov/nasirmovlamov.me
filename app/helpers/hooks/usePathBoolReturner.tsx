@@ -15,7 +15,8 @@ export const usePathBoolReturner = () => {
     dashboard: false,
     blog: false,
     snippets: false,
-    about:false
+    about:false,
+    physics:false,
   })
 
   const defaultFalseRoute = {
@@ -24,7 +25,9 @@ export const usePathBoolReturner = () => {
     dashboard: false,
     blog: false,
     snippets: false,
-    about:false
+    about:false,
+    physics:false,
+
   }
 
 
@@ -64,6 +67,12 @@ export const usePathBoolReturner = () => {
         setIsRoute({
           ...defaultFalseRoute,
           about: true,
+        })
+        break
+      case '/physics':
+        setIsRoute({
+          ...defaultFalseRoute,
+          physics: true,
         })
         break
       default:

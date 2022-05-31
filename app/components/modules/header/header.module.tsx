@@ -34,6 +34,18 @@ export const HeaderModule:React.FC = (props: Props) => {
           </StyledHeaderLink>
         </Link>
 
+        {/* <Link href="/about" passHref>
+          <StyledHeaderLink darkMode bold={isRoute.about}>
+              Snippets
+          </StyledHeaderLink>
+        </Link> */}
+
+        <Link href="/physics" passHref>
+          <StyledHeaderLink darkMode bold={isRoute.physics}>
+            Physics Blog ⚡
+          </StyledHeaderLink>
+        </Link>
+
         {/* <Link href="blog" passHref>
           <StyledHeaderLink bold={isRoute.blog}>
           Blog

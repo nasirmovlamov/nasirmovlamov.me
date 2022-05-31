@@ -1,6 +1,5 @@
 import '@css/css-export.css'
 import '@scss/scss-export.scss'
-import "@css/css-export.css"
 
 import type { AppProps } from 'next/app'
 import FooterModule from '@components/modules/footer/footer.module'

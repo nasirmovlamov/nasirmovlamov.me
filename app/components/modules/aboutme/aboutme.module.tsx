@@ -17,7 +17,6 @@ export const AboutMe = (props: Props) => {
               Software Engineer at A2Z Technologies
             </StyledSubHeader>
             <StyledSideParagraph>
-              Automated person for problem solving:) <br/>
               <em>Physics</em>  and <em> Martial arts</em>  enthusiast. <br/>
               Learning/Teaching about javascript, typescript, linux and React / Next.js.<br/>
 

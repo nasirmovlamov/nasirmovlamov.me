@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle<Props>`
 
   a {
     font-size: ${({ theme }) => theme.font.sizes.link};
-    text-decoration: none;
+    /* text-decoration: none; */
     cursor: pointer;
   }
 

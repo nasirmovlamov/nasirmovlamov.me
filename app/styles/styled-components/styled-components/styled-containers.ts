@@ -20,6 +20,7 @@ export const StyledFColumn = styled.div<any>`
   flex-direction: column;
   width: ${({width}) => width ? width : "100%"};
   height: ${({height}) => height ? height : "auto"};
+  margin-top:${({marginTop}) => marginTop? marginTop :"0"};
 `;
 
 export const StyledCenter = styled.div`
@@ -55,6 +56,8 @@ export const StyledSpacing = styled.div<any>`
   padding-bottom: ${({paddingBottom}) => paddingBottom ? paddingBottom : "0"};
   padding-left: ${({paddingLeft}) => paddingLeft ? paddingLeft : "0"};
   padding-right: ${({paddingRight}) => paddingRight ? paddingRight : "0"};
+  flex-wrap: ${({flexWrap}) => flexWrap ? flexWrap : "nowrap"};
+  column-gap: ${({columnGap}) => columnGap ? columnGap : "0"};
 `
 
 
@@ -66,5 +69,7 @@ export const StyledFlex = styled.div<any>`
   margin-top: ${({marginTop}) => marginTop? marginTop :"0"};
   margin-bottom: ${({marginBottom}) => marginBottom? marginBottom :"0"};
   column-gap: ${({columnGap}) => columnGap? columnGap :"0"};
+  flex-wrap: ${({flexWrap}) => flexWrap? "wrap" :"nowrap"};
+  row-gap: ${({rowGap}) => rowGap? rowGap :"0"};
   /* ${props => StyledSpacing} */
 `;

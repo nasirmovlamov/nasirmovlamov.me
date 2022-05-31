@@ -16,11 +16,21 @@ type Props = {
 export const CustomThemeProvider = ({children}:Props) => {
   const [darkMode , setDarkMode] = useState(false)
 
+  const rawSetTheme = (theme:any) => {
+    const root = window.document.documentElement
+    const isDark = theme === 'dark'
+
+    root.classList.remove(isDark ? 'light' : 'dark')
+    root.classList.add(theme)
+
+    localStorage.setItem('color-theme', theme)
+  }
+
   const changeTheme = () => {
     setDarkMode(!darkMode)
     localStorage.setItem('darkMode' , JSON.stringify(!darkMode))
     console.log("darkMode " ,darkMode)
-
+    rawSetTheme(!darkMode ? 'dark' : 'light')
   }
 
   useEffect(() => {
