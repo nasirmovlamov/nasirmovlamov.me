@@ -11,7 +11,7 @@ const Blog: NextPage = () => {
             <StyledHeader>Blog Posts</StyledHeader>
 
             <StyledSideParagraph>
-              I've been writing online since 2018, mostly about software engineering and interesting concepts of javascript, typescript, react.
+              I have been writing online since 2018, mostly about software engineering and interesting concepts of javascript, typescript, react.
               <br/>
               <em>Use the search below to filter by title.</em>
             </StyledSideParagraph>
