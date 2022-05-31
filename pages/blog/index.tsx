@@ -4,7 +4,7 @@ import { StyledHeader, StyledSideParagraph, StyledSubHeader } from '@styled-comp
 import { AboutMe } from '@components/modules/aboutme/aboutme.module'
 import type { NextPage } from 'next'
 
-const Blog: NextPage = () => {
+export const Blog: NextPage = () => {
   return (
     <StyledFlex>
        <StyledFColumn>
