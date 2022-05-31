@@ -54,8 +54,8 @@ const Spotify: NextPage = () => {
               "Loading..."
               :
               (
-                spotifyData.items.map((element:any) => {
-                  return <SpotifyPost playedAt={element.played_at} externalUrl={element.track.external_urls} url={element.track.album.images[0].url} artist={element.track.artists[0].name} name={element.track.name} />
+                spotifyData.items.map((element:any, index:number) => {
+                  return <SpotifyPost key={index} playedAt={element.played_at} externalUrl={element.track.external_urls} url={element.track.album.images[0].url} artist={element.track.artists[0].name} name={element.track.name} />
                 })
               )
             }
