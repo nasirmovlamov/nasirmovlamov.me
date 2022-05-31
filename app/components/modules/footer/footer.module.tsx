@@ -19,7 +19,7 @@ const FooterModule = (props: Props) => {
         setLoading('pending')
         const request = await axios.get('https://api.spotify.com/v1/me/player/currently-playing', {
           headers: {
-            'Authorization': 'Bearer ' + 'BQCxE9u1Pnd5sPxNmf3H7PbV-kmLlgH-KOhTJlnyDN3xg74njheS68RtK88UE4YPmeBDMzjfmwuQGDm79UaGo_FCUUZIizGcahXV6WpC_cz5N-FIEyBI_rHclqTUM33B40l6ikwrh2adb2NBGd_HRUeAmF00iWLQsLrDznLGyno',
+            'Authorization': 'Bearer ' + 'BQDQLPO-UdDs5YuRSqtJScDGtUxlXkbnw2TpCVpbrqDWv6Y40hioQLgxB0ROKdLeHo1bz1AGYowXnXw4hg2hwF19gjalskRhk5HxGB77pYhmSDswXxAfPADe-xdDgywYdNKht1MVzYR2DNkf_nCjJDCdiCQrUZAI9zETTCx2-pw',
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           }
