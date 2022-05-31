@@ -30,6 +30,7 @@ const FooterModule = (props: Props) => {
         return request.data
       } catch (error) {
         console.log(error)
+        setSpotifyData(null)
       }
   }
 
@@ -58,16 +59,23 @@ const FooterModule = (props: Props) => {
             "Loading..."
             :
             (
-              spotifyData.is_playing ?
-              <a href={spotifyData.item.external_urls.spotify} rel="noreferrer" target="_blank">
-                <div style={{display:"flex",alignItems:"center",gap:'8px'}}>
-                  Playing <img style={{borderRadius:"50%"}} width={30} src={spotifyData.item.album.images[0].url} alt="Spotify Music" /><SytledText > {spotifyData.item.album.artists[0].name} </SytledText> - <SytledText bold white_2>{spotifyData.item.name}</SytledText>
-                </div>
-              </a>
+              spotifyData ?
+                spotifyData.is_playing ?
+                <a href={spotifyData.item.external_urls.spotify} rel="noreferrer" target="_blank">
+                  <div style={{display:"flex",alignItems:"center",gap:'8px'}}>
+                    Playing <img style={{borderRadius:"50%"}} width={30} src={spotifyData.item.album.images[0].url} alt="Spotify Music" /><SytledText > {spotifyData.item.album.artists[0].name} </SytledText> - <SytledText bold white_2>{spotifyData.item.name}</SytledText>
+                  </div>
+                </a>
+                :
+                <>
+                  <div style={{display:"flex",alignItems:"center",gap:'8px'}}>
+                    Paused <img style={{borderRadius:"50%"}} width={30} src={spotifyData.item.album.images[0].url} alt="Spotify Music" /><SytledText > {spotifyData.item.album.artists[0].name} </SytledText> - <SytledText bold white_2>{spotifyData.item.name}</SytledText>
+                  </div>
+                </>
               :
               <>
                 <div style={{display:"flex",alignItems:"center",gap:'8px'}}>
-                  Paused <img style={{borderRadius:"50%"}} width={30} src={spotifyData.item.album.images[0].url} alt="Spotify Music" /><SytledText > {spotifyData.item.album.artists[0].name} </SytledText> - <SytledText bold white_2>{spotifyData.item.name}</SytledText>
+                  <SVG_spotify/>  Not Playing
                 </div>
               </>
             )
