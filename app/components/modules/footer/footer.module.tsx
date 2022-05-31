@@ -19,7 +19,7 @@ const FooterModule = (props: Props) => {
         setLoading('pending')
         const request = await axios.get('https://api.spotify.com/v1/me/player/currently-playing', {
           headers: {
-            'Authorization': 'Bearer ' + 'BQDQLPO-UdDs5YuRSqtJScDGtUxlXkbnw2TpCVpbrqDWv6Y40hioQLgxB0ROKdLeHo1bz1AGYowXnXw4hg2hwF19gjalskRhk5HxGB77pYhmSDswXxAfPADe-xdDgywYdNKht1MVzYR2DNkf_nCjJDCdiCQrUZAI9zETTCx2-pw',
+            'Authorization': 'Bearer ' + 'BQC-P9SGBqKeE85FgwJQCuQKv1cE5HXqf-0kONVFm5OuJDUgAec7VDMxqeDBGCmb99FcOl_B3qcLz3he1AZiU5Zlvj1ijQNyMoniECYc5fXRMETn64RrxkSTDhzwMnSEH44luokiDnQwm0xni3K1SOv1_GjCoa3Hh1_rewAUSeVT7g',
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           }
@@ -27,8 +27,6 @@ const FooterModule = (props: Props) => {
         console.log(request.data)
         setSpotifyData(request.data)
         setLoading('idle')
-        return request.data
-        console.log(request)
         return request.data
       } catch (error) {
         console.log(error)
@@ -63,12 +61,14 @@ const FooterModule = (props: Props) => {
               spotifyData.is_playing ?
               <a href={spotifyData.item.external_urls.spotify} rel="noreferrer" target="_blank">
                 <div style={{display:"flex",alignItems:"center",gap:'8px'}}>
-                  <img style={{borderRadius:"50%"}} width={30} src={spotifyData.item.album.images[0].url} alt="Spotify Music" /><SytledText > {spotifyData.item.album.artists[0].name} </SytledText> - <SytledText bold white_2>{spotifyData.item.name}</SytledText>
+                  Playing <img style={{borderRadius:"50%"}} width={30} src={spotifyData.item.album.images[0].url} alt="Spotify Music" /><SytledText > {spotifyData.item.album.artists[0].name} </SytledText> - <SytledText bold white_2>{spotifyData.item.name}</SytledText>
                 </div>
               </a>
               :
               <>
-                <SVG_spotify /> <SytledText bold white_2>Not Playing</SytledText>  - <SytledText gray_2> Spotify </SytledText>
+                <div style={{display:"flex",alignItems:"center",gap:'8px'}}>
+                  Paused <img style={{borderRadius:"50%"}} width={30} src={spotifyData.item.album.images[0].url} alt="Spotify Music" /><SytledText > {spotifyData.item.album.artists[0].name} </SytledText> - <SytledText bold white_2>{spotifyData.item.name}</SytledText>
+                </div>
               </>
             )
           }
@@ -77,6 +77,12 @@ const FooterModule = (props: Props) => {
 
       <StyledFlex spaceBetween>
         <StyledFColumn width="260px">
+          <Link href="/spotify" passHref>
+            <StyledFooterLink>
+              Spotify
+            </StyledFooterLink>
+          </Link>
+
           <Link href="/" passHref>
             <StyledFooterLink>
               Home
