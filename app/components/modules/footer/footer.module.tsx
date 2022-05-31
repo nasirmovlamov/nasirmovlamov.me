@@ -63,7 +63,7 @@ const FooterModule = (props: Props) => {
               spotifyData.is_playing ?
               <a href={spotifyData.item.external_urls.spotify} rel="noreferrer" target="_blank">
                 <div style={{display:"flex",alignItems:"center",gap:'8px'}}>
-                  <img style={{borderRadius:"50%"}} width={30} layout='fill' src={spotifyData.item.album.images[0].url} alt="Spotify Music" /><SytledText > {spotifyData.item.album.artists[0].name} </SytledText> - <SytledText bold white_2>{spotifyData.item.name}</SytledText>
+                  <img style={{borderRadius:"50%"}} width={30} src={spotifyData.item.album.images[0].url} alt="Spotify Music" /><SytledText > {spotifyData.item.album.artists[0].name} </SytledText> - <SytledText bold white_2>{spotifyData.item.name}</SytledText>
                 </div>
               </a>
               :
