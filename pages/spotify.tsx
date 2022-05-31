@@ -20,7 +20,7 @@ const Spotify: NextPage = () => {
       setLoading('pending')
       const request = await axios.get('https://api.spotify.com/v1/me/player/recently-played?limit=10', {
         headers: {
-          'Authorization': 'Bearer ' + 'BQB-mrQa2CuuS16vqw3RMpvs4R_a5C9g82_l6F8e1IYfibwEqeTwxEFwWCuFUQmxKqAyoXrrd7q71ie3XGzGn7ph38_jJ9mOZJaMxyY4dQQCOujlT4nzGmbexOdvnqGIMaKdFocL1RLEd9U1op6TMXtDhLpJJJk0LU1EiMuZHwiDGQ',
+          'Authorization': 'Bearer ' + 'BQCfegEOb0mf6pau9QWGZZ4E5x5hVBm1pcSMWar229Tv8QoFXapbt-HOLUv612KSdCQopY041QmZbOiZK_GSRVxmXLnxUvGJc907BvYFBv0b0rPRSUD-tMoIpAiNwXJU_R6a6tnpq0Vs3pBmoeSsXaFyG-hlgAfaVEbQkAUpmLQBXg',
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         }
