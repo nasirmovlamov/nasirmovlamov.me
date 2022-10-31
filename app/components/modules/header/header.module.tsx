@@ -1,31 +1,28 @@
-import React, { ReactComponentElement, useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 
-import Link from 'next/link';
-import { Sty_Header } from './header.style';
-import { StyledFlex } from '@styled-components/styled-components/styled-containers';
-import { StyledHeaderLink } from '@styled-components/styled-components/styled-micro-components';
 import { ThemeChanger } from '@components/shared/ThemeComponent/theme-changer.shared';
-import { ThemeContext } from 'styled-components';
 import { usePathBoolReturner } from '@helpers/hooks/usePathBoolReturner';
-import { useRouter } from 'next/router';
+import {
+  StyledHeaderLink,
+  StyledHeaderLinkFirst,
+} from '@styled-components/styled-components/styled-micro-components';
+import Link from 'next/link';
+import { ThemeContext } from 'styled-components';
+import { Sty_Header } from './header.style';
 
 type Props = {};
 
-export const HeaderModule:React.FC = (props: Props) => {
-  const {isRoute} = usePathBoolReturner()
-  const {darkMode} = useContext(ThemeContext)
-  useEffect(() => {
-    console.log(isRoute.home)
-  }, [isRoute])
-
+export const HeaderModule: React.FC = (props: Props) => {
+  const { isRoute } = usePathBoolReturner();
+  const { darkMode } = useContext(ThemeContext);
 
   return (
     <Sty_Header>
-      <StyledFlex>
+      <div className="flex ">
         <Link href="/" passHref>
-          <StyledHeaderLink darkMode bold={isRoute.home}>
-          Home
-          </StyledHeaderLink>
+          <StyledHeaderLinkFirst paddingLeft={'0px'} darkMode bold={isRoute.home} className="pl-0">
+            Home
+          </StyledHeaderLinkFirst>
         </Link>
 
         <Link href="/about" passHref>
@@ -34,50 +31,14 @@ export const HeaderModule:React.FC = (props: Props) => {
           </StyledHeaderLink>
         </Link>
 
-        {/* <Link href="/about" passHref>
-          <StyledHeaderLink darkMode bold={isRoute.about}>
-              Snippets
-          </StyledHeaderLink>
-        </Link> */}
-
-        <Link href="/physics" passHref>
-          <StyledHeaderLink darkMode bold={isRoute.physics}>
-            Physics Blog ⚡
-          </StyledHeaderLink>
-        </Link>
-
-        {/* <Link href="blog" passHref>
-          <StyledHeaderLink bold={isRoute.blog}>
-          Blog
-          </StyledHeaderLink>
-        </Link> */}
-{/*
-        <Link href="guestbook" passHref>
-          <StyledHeaderLink bold={isRoute.guestbook}>
-          Guestbook
-          </StyledHeaderLink>
-        </Link>
-
-        <Link href="dashboard" passHref>
-          <StyledHeaderLink bold={isRoute.dashboard}>
-            Dashboard
-          </StyledHeaderLink>
-        </Link>
-
-        <Link href="blog" passHref>
-          <StyledHeaderLink bold={isRoute.blog}>
+        <Link href="/blog" passHref>
+          <StyledHeaderLink darkMode bold={isRoute.blog}>
             Blog
           </StyledHeaderLink>
         </Link>
-
-        <Link href="snippets" passHref>
-          <StyledHeaderLink bold={isRoute.snippets}>
-            Snippets
-          </StyledHeaderLink>
-        </Link> */}
-      </StyledFlex>
+      </div>
 
       <ThemeChanger />
     </Sty_Header>
-  )
+  );
 };

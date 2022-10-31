@@ -1,35 +1,43 @@
-import { StyledFColumn, StyledFlex } from '@styled-components/styled-components/styled-containers'
-import { StyledHeader, StyledSideParagraph, StyledSubHeader } from '@styled-components/styled-components/styled-micro-components'
+import { StyledFColumn, StyledFlex } from '@styled-components/styled-components/styled-containers';
+import {
+  StyledHeader,
+  StyledSideParagraph,
+  StyledSubHeader,
+} from '@styled-components/styled-components/styled-micro-components';
 
-import Image from 'next/image'
-import React from 'react'
-import { StyledPersonImage } from './aboutme.styled'
-import nasirmovlamov from '../../../styles/media/images/nasirmovlamov.jpeg'
+import Image from 'next/image';
+import nasirmovlamov2 from '../../../styles/media/images/nasirmovlamov2.jpeg';
+import { StyledPersonImage } from './aboutme.styled';
 
-type Props = {}
+type Props = {};
 
 export const AboutMe = (props: Props) => {
   return (
-    <StyledFlex spaceBetween>
-        <StyledFColumn>
-            <StyledHeader>Nasir Movlamov</StyledHeader>
-            <StyledSubHeader>
-              Software Engineer at A2Z Technologies
-            </StyledSubHeader>
-            <StyledSideParagraph>
-              <em>Physics</em>  and <em> Martial arts</em>  enthusiast. <br/>
-              Learning/Teaching about javascript, typescript, linux and React / Next.js.<br/>
+    <div className='flex flex-wrap justify-between min-w-270'>
+      <div className='flex flex-col flex-wrap max-w-lg' >
+        <StyledHeader>Nasir Movlamov</StyledHeader>
+        <StyledSubHeader>
+          Software Engineer at{' '}
+          <a
+            target={'_blank'}
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/company/the-bank-abb/mycompany/"
+          >
+            ABB
+          </a>
+        </StyledSubHeader>
+        <StyledSideParagraph>
+          <em>Physics</em> and <em> Martial arts</em> {"  "} enthusiast. <br />
+          learning / talking about javascript, typescript, linux, react, physics
+          <br />
+        </StyledSideParagraph>
+      </div>
 
-
-            </StyledSideParagraph>
-        </StyledFColumn>
-
-        <StyledFColumn  width="100px">
-            <StyledPersonImage>
-              <Image src={nasirmovlamov} alt="image of Nasir Movlamov"/>
-            </StyledPersonImage>
-        </StyledFColumn>
-    </StyledFlex>
-  )
-}
-
+      <div className='flex'>
+        <StyledPersonImage>
+          <Image src={nasirmovlamov2} alt="image of Nasir Movlamov" />
+        </StyledPersonImage>
+      </div>
+    </div>
+  );
+};

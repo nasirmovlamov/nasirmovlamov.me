@@ -33,12 +33,26 @@ export const StyledHeaderLink = styled.span<any>`
 
 `;
 
+export const StyledHeaderLinkFirst = styled.span<any>`
+  display: inline;
+  font-size: ${({ theme }) => theme.font.sizes.link};
+  color: ${(props) => (props.bold ? props.theme.colors.white_2 : props.theme.colors.gray_2)};
+  font-weight: ${(props) => (props.bold ? 600 : 'initial')};
+  margin: 0;
+  padding: 10px 15px;
+  margin-left: -15px;
+  cursor: pointer;
+  border-radius: 10px;
+  :hover {
+    background-color: ${({ theme }) => theme.colors.gray_3};
+  }
+`;
+
 
 export const StyledHeader = styled.h1<any>`
   font-size: ${({ theme }) => theme.font.sizes.title};
   color: ${({ theme }) => theme.colors.white_2};
   margin-bottom: 5px;
-  width: 100%;
 `;
 
 export const StyledSubHeader = styled.h2<any>`
@@ -51,6 +65,7 @@ export const StyledSubHeader = styled.h2<any>`
 export const StyledHr = styled.hr<any>`
   border: none;
   margin: 0;
+  margin-bottom:40px;
   width: ${( props ) => props.width || "100%"};
   height: ${(props) =>  props.height || "1px"};
   background-color: ${({ theme }) => theme.colors.gray_1};

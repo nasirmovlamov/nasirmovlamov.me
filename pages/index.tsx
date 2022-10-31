@@ -1,13 +1,8 @@
-import { AboutMe } from '@components/modules/aboutme/aboutme.module'
-import { CustomThemeContext } from '@store/context/theme.context'
-import type { NextPage } from 'next'
+import { AboutMe } from '@components/modules/aboutme/aboutme.module';
+import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
-  return (
-    <>
-       <AboutMe/>
-    </ >
-  )
-}
+  return <AboutMe />;
+};
 
-export default Home
+export default Home;

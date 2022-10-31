@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
-import { is } from 'immer/dist/internal'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 
-type Props = {}
+type Props = {};
 
 export const usePathBoolReturner = () => {
-  const router = useRouter()
-  const path = router.pathname
+  const router = useRouter();
+  const path = router.pathname;
 
   const [isRoute, setIsRoute] = useState({
     home: true,
@@ -15,9 +14,9 @@ export const usePathBoolReturner = () => {
     dashboard: false,
     blog: false,
     snippets: false,
-    about:false,
-    physics:false,
-  })
+    about: false,
+    physics: false,
+  });
 
   const defaultFalseRoute = {
     home: false,
@@ -25,68 +24,65 @@ export const usePathBoolReturner = () => {
     dashboard: false,
     blog: false,
     snippets: false,
-    about:false,
-    physics:false,
+    about: false,
+    physics: false,
+  };
 
-  }
-
-
-  const setRoute = (path:string) => {
+  const setRoute = (path: string) => {
     switch (path) {
       case '/':
         setIsRoute({
           ...defaultFalseRoute,
-          home: true
-        })
-        break
+          home: true,
+        });
+        break;
       case '/guestbook':
         setIsRoute({
           ...defaultFalseRoute,
           guestbook: true,
-        })
-        break
+        });
+        break;
       case '/dashboard':
         setIsRoute({
           ...defaultFalseRoute,
           dashboard: true,
-        })
-        break
+        });
+        break;
       case '/blog':
         setIsRoute({
           ...defaultFalseRoute,
           blog: true,
-        })
-        break
+        });
+        break;
       case '/snippets':
         setIsRoute({
           ...defaultFalseRoute,
           snippets: true,
-        })
-        break
+        });
+        break;
       case '/about':
         setIsRoute({
           ...defaultFalseRoute,
           about: true,
-        })
-        break
+        });
+        break;
       case '/physics':
         setIsRoute({
           ...defaultFalseRoute,
           physics: true,
-        })
-        break
+        });
+        break;
       default:
         setIsRoute({
           ...defaultFalseRoute,
           home: true,
-        })
-        break
+        });
+        break;
     }
-  }
+  };
 
   useEffect(() => {
-    setRoute(path)
-  }, [path])
-  return {isRoute}
-}
-
+    setRoute(path);
+  }, [path]);
+  return { isRoute };
+};

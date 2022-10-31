@@ -17,7 +17,7 @@ export const SpotifyPost = (props: Props) => {
 
   return (
     <a href={`${props.externalUrl}`} target="_blank" rel="noreferrer" className='w-full'>
-      <div className='transform hover:scale-[1.01] transition-all rounded-xl  bg-gradient-to-r p-1 from-[#21d115] to-[#0E1528] cursor-pointer w-full'>
+      <div className='w-full transform hover:scale-[1.01] transition-all rounded-xl  bg-gradient-to-r p-1 from-[#21d115] to-[#0E1528] cursor-pointer w-full'>
         <div className='flex items-center h-full  bg-red-100 dark:bg-black rounded-lg p-4  gap-10'>
           <div className='flex flex-col '>
               <img src={props.url} width={100} style={{borderRadius:"50%"}} alt="" />

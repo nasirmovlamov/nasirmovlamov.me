@@ -1,12 +1,7 @@
-import { AboutMe } from '@components/modules/aboutme/aboutme.module'
-import type { NextPage } from 'next'
+import type { NextPage } from 'next';
 
 const Snippets: NextPage = () => {
-  return (
-    <>
-       Snippets
-    </>
-  )
-}
+  return <>Snippets</>;
+};
 
-export default Snippets
+export default Snippets;
