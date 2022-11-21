@@ -1,4 +1,3 @@
-import { StyledFColumn, StyledFlex } from '@styled-components/styled-components/styled-containers';
 import {
   StyledHeader,
   StyledSideParagraph,
@@ -12,10 +11,9 @@ import { StyledPersonImage } from './aboutme.styled';
 type Props = {};
 
 export const AboutMe = (props: Props) => {
-  
   return (
-    <div className="flex flex-wrap justify-between max-w-270 gap-5">
-      <div className="flex flex-col flex-wrap max-w-lg md:order-1 order-2">
+    <div className="flex flex-wrap  max-w-270 gap-5 justify-center sm:justify-between">
+      <div className="flex flex-col flex-wrap max-w-lg md:order-1 order-2 ">
         <StyledHeader>Nasir Movlamov</StyledHeader>
         <StyledSubHeader>
           Software Engineer at{' '}

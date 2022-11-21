@@ -6,7 +6,6 @@ import {
 import { Post1 } from '@components/shared/posts/Post1';
 import { Post2 } from '@components/shared/posts/Post2';
 import { Post3 } from '@components/shared/posts/Post3';
-import { StyledFColumn } from '@styled-components/styled-components/styled-containers';
 import type { NextPage } from 'next';
 
 const Physics: NextPage = () => {

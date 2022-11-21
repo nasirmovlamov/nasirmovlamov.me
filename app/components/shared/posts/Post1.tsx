@@ -6,7 +6,7 @@ type Props = {
 
 export const Post1 = (props: Props) => {
   return (
-    <Link href="/physics/" passHref>
+    <Link href="/blog" passHref>
       <div className="transform hover:scale-[1.01] transition-all rounded-xl w-full md:w-1/3 bg-gradient-to-r p-1 from-[#D8B4FE] to-[#818CF8] cursor-pointer">
         <div className="flex flex-col justify-between h-full  bg-white dark:bg-black rounded-lg p-4">
           <div className="flex flex-col md:flex-row justify-between">
