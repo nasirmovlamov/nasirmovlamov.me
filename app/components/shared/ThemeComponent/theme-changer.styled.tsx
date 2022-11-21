@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledThemeChangerBtn = styled.button<any>`
   width: 45px;
   height: 45px;
-  background-color: ${({theme, isDarkMode}) => isDarkMode ? theme.colors.gray_1 :  theme.colors.gray_1};
+  background-color: ${({theme, isDarkMode}) => isDarkMode ? theme.colors.gray_1 :  theme.colors.white_2};
   border: none;
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@ export const StyledThemeChangerBtn = styled.button<any>`
     width: 25px;
     color:red;
     path {
-      color:${({theme, isDarkMode}) => isDarkMode ? theme.colors.black_1 : theme.colors.gray_2};
+      color:${({theme, isDarkMode}) => isDarkMode ? theme.colors.black_1 : theme.colors.black_1};
     }
   }
   :hover {

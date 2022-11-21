@@ -1,5 +1,5 @@
 import { darkTheme, lightTheme } from '@styled-components/styled-theme/styled-theme';
-import { createContext, ReactFragment, useEffect, useState } from 'react';
+import { createContext, ReactFragment, useLayoutEffect, useState } from 'react';
 
 import { GlobalStyle } from '@styled-components/styled-global';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
@@ -49,7 +49,7 @@ export const CustomThemeProvider = ({ children }: Props) => {
     ietIsMenuOpen(!isMenuOpen);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const root = window.document.documentElement;
     const darkMode = localStorage.getItem('darkMode');
     if (darkMode !== null) {
