@@ -11,13 +11,10 @@ import type { NextPage } from 'next';
 
 const Physics: NextPage = () => {
   return (
-    <StyledFColumn>
-      <StyledHeader className="font-bold">
-        {' '}
-        Blog ⚡
-      </StyledHeader>
+    <div className="flex flex-wrap justify-between max-w-270 gap-5">
+      <StyledHeader className="font-bold"> Blog ⚡</StyledHeader>
       <StyledSubHeader fontSize="1.5rem" className="italic ">
-        Everything I enjoyed during learning 
+        Everything I enjoyed during learning
       </StyledSubHeader>
       <StyledSubHeader
         fontSize="1.5rem"
@@ -28,7 +25,7 @@ const Physics: NextPage = () => {
         <Post2 title="Coming soon" />
         <Post3 title="Coming soon" />
       </StyledSubHeader>
-    </StyledFColumn>
+    </div>
   );
 };
 

@@ -4,12 +4,11 @@ import {
   StyledSubHeader,
 } from '@styled-components/styled-components/styled-micro-components';
 
-import { StyledFColumn } from '@styled-components/styled-components/styled-containers';
 import type { NextPage } from 'next';
 
 const About: NextPage = () => {
   return (
-    <StyledFColumn>
+    <div className="flex flex-wrap justify-between max-w-270 gap-5">
       <StyledHeader> About Me</StyledHeader>
       <StyledSubHeader fontSize="1.5rem" marginTop="30px">
         Links
@@ -51,7 +50,7 @@ const About: NextPage = () => {
       <StyledParagraph>
         Data encryption and vulnerability analysis at software infrastructures
       </StyledParagraph>
-    </StyledFColumn>
+    </div>
   );
 };
 
