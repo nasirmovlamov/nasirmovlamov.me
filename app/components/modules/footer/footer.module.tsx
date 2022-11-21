@@ -42,7 +42,7 @@ const FooterModule = (props: Props) => {
   }, []);
 
   return (
-    <div className="flex flex-col min-w-270 my-10">
+    <div className="flex flex-col w-full  md:min-w-270 my-10">
       <StyledHr />
 
       <div className="flex flex-wrap gap-x-36 ">

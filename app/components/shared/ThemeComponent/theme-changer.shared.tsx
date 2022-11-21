@@ -7,15 +7,15 @@ import { SvgThemeElement } from './elements/svg-theme.element'
 type Props = {}
 
 export const ThemeChanger = (props: Props) => {
-  const {darkMode , changeTheme} = useContext<any>(CustomThemeContext)
+  const { isDarkMode, changeTheme } = useContext<any>(CustomThemeContext);
 
 
 
   return (
-      <StyledThemeChangerBtn darkMode={darkMode} onClick={changeTheme}>
-          <SvgThemeElement theme={darkMode}/>
-      </StyledThemeChangerBtn>
-  )
+    <StyledThemeChangerBtn darkMode={isDarkMode} onClick={changeTheme}>
+      <SvgThemeElement theme={isDarkMode} />
+    </StyledThemeChangerBtn>
+  );
 }
 
 

@@ -1,53 +1,73 @@
-import React, { ReactFragment, createContext, useContext, useEffect, useState } from "react";
 import { darkTheme, lightTheme } from '@styled-components/styled-theme/styled-theme';
+import { createContext, ReactFragment, useEffect, useState } from 'react';
 
-import { GlobalStyle } from "@styled-components/styled-global";
-import { Sty_Layout } from "@components/layout/layout.style";
+import { GlobalStyle } from '@styled-components/styled-global';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
-export const CustomThemeContext = createContext({})
-
+type CustomThemeContextType = {
+  isMenuOpen: boolean;
+  isDarkMode: boolean;
+  changeTheme: () => void;
+  toggleMenu: () => void;
+};
+export const CustomThemeContext = createContext<CustomThemeContextType>({
+  isMenuOpen: false,
+  isDarkMode: true,
+  changeTheme: () => {},
+  toggleMenu: () => {},
+});
 
 type Props = {
   children: ReactFragment;
 };
 
+export const CustomThemeProvider = ({ children }: Props) => {
+  const [isDarkMode, setDarkMode] = useState<boolean>(false);
+  const [isMenuOpen, ietIsMenuOpen] = useState<boolean>(false);
 
-export const CustomThemeProvider = ({children}:Props) => {
-  const [darkMode , setDarkMode] = useState(false)
+  const rawSetTheme = (theme: any) => {
+    const root = window.document.documentElement;
+    const isDark = theme === 'dark';
 
-  const rawSetTheme = (theme:any) => {
-    const root = window.document.documentElement
-    const isDark = theme === 'dark'
+    root.classList.remove(isDark ? 'light' : 'dark');
+    root.classList.add(theme);
 
-    root.classList.remove(isDark ? 'light' : 'dark')
-    root.classList.add(theme)
-
-    localStorage.setItem('color-theme', theme)
-  }
+    localStorage.setItem('color-theme', theme);
+  };
 
   const changeTheme = () => {
-    setDarkMode(!darkMode)
-    localStorage.setItem('darkMode' , JSON.stringify(!darkMode))
-    console.log("darkMode " ,darkMode)
-    rawSetTheme(!darkMode ? 'dark' : 'light')
-  }
+    setDarkMode(!isDarkMode);
+    localStorage.setItem('darkMode', JSON.stringify(!isDarkMode));
+    console.log('darkMode ', isDarkMode);
+    // rawSetTheme(!darkMode ? 'dark' : 'light');
+    const root = window.document.documentElement;
+    root.classList.remove(isDarkMode ? 'light' : 'dark');
+    root.classList.add(!isDarkMode ? 'light' : 'dark');
+  };
+
+  const toggleMenu = () => {
+    ietIsMenuOpen(!isMenuOpen);
+  };
 
   useEffect(() => {
-    const darkMode = localStorage.getItem('darkMode')
-    if( darkMode !== null){
-      setDarkMode(JSON.parse(darkMode))
+    const root = window.document.documentElement;
+    const darkMode = localStorage.getItem('darkMode');
+    if (darkMode !== null) {
+      setDarkMode(JSON.parse(darkMode));
+      if (darkMode) {
+        root.classList.add('dark');
+      } else {
+        root.classList.add('light');
+      }
     }
-  }, [])
+  }, []);
 
   return (
-    <CustomThemeContext.Provider value={{darkMode , changeTheme}}>
-      <StyledThemeProvider  theme={ darkMode ? lightTheme : darkTheme}>
+    <CustomThemeContext.Provider value={{ isMenuOpen, isDarkMode, changeTheme, toggleMenu }}>
+      <StyledThemeProvider theme={isDarkMode ? lightTheme : darkTheme}>
         <GlobalStyle />
-        <Sty_Layout>
-        {children}
-        </Sty_Layout>
+        <div className="min-h-screen mx-auto max-w-5xl px-7">{children}</div>
       </StyledThemeProvider>
     </CustomThemeContext.Provider>
-  )
-}
+  );
+};

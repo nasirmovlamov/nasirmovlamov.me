@@ -12,9 +12,10 @@ import { StyledPersonImage } from './aboutme.styled';
 type Props = {};
 
 export const AboutMe = (props: Props) => {
+  
   return (
-    <div className='flex flex-wrap justify-between min-w-270'>
-      <div className='flex flex-col flex-wrap max-w-lg' >
+    <div className="flex flex-wrap justify-between max-w-270 gap-5">
+      <div className="flex flex-col flex-wrap max-w-lg md:order-1 order-2">
         <StyledHeader>Nasir Movlamov</StyledHeader>
         <StyledSubHeader>
           Software Engineer at{' '}
@@ -27,13 +28,13 @@ export const AboutMe = (props: Props) => {
           </a>
         </StyledSubHeader>
         <StyledSideParagraph>
-          <em>Physics</em> and <em> Martial arts</em> {"  "} enthusiast. <br />
+          <em>Physics</em> and <em> Martial arts</em> {'  '} enthusiast. <br />
           learning / talking about javascript, typescript, linux, react, physics
           <br />
         </StyledSideParagraph>
       </div>
 
-      <div className='flex'>
+      <div className="flex md:order-2 order-1">
         <StyledPersonImage>
           <Image src={nasirmovlamov2} alt="image of Nasir Movlamov" />
         </StyledPersonImage>
