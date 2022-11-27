@@ -13,7 +13,7 @@ type Props = {};
 
 export const HeaderModule: React.FC = (props: Props) => {
   const { isRoute } = usePathBoolReturner();
-  const { isDarkMode, isMenuOpen, toggleMenu } = useContext(CustomThemeContext);
+  const { darkMode, isMenuOpen, toggleMenu } = useContext(CustomThemeContext);
 
   return (
     <>
@@ -75,7 +75,7 @@ export const HeaderModule: React.FC = (props: Props) => {
           <Link href="/" passHref>
             <StyledHeaderLinkFirst
               paddingLeft={'0px'}
-              isDarkMode
+              isDarkMode={darkMode === 'dark' ? true : false}
               bold={isRoute.home}
               className="pl-0"
             >
@@ -84,13 +84,13 @@ export const HeaderModule: React.FC = (props: Props) => {
           </Link>
 
           <Link href="/about" passHref>
-            <StyledHeaderLink isDarkMode bold={isRoute.about}>
+            <StyledHeaderLink isDarkMode={darkMode === 'dark' ? true : false} bold={isRoute.about}>
               About Me
             </StyledHeaderLink>
           </Link>
 
           <Link href="/blog" passHref>
-            <StyledHeaderLink isDarkMode bold={isRoute.blog}>
+            <StyledHeaderLink isDarkMode={darkMode === 'dark' ? true : false} bold={isRoute.blog}>
               Blog
             </StyledHeaderLink>
           </Link>
