@@ -26,7 +26,6 @@ export const CustomThemeProvider = ({ children }: Props) => {
 
   const toggleTheme = () => {
     const root = window.document.documentElement;
-    // root.classList.add('dark');
     root.classList.remove('light');
     root.classList.remove('dark');
 

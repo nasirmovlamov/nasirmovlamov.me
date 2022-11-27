@@ -20,9 +20,9 @@ const Blog: NextPage = () => {
         marginTop="10px"
         className="flex gap-6 flex-col md:flex-row"
       >
-        <Post1  />
-        <Post2  />
-        <Post3 />
+        <Post1 title="Coming soon" slug="post 1" />
+        <Post2 title="Coming soon" slug="post 1" />
+        <Post3 title="Coming soon" slug="post 1" />
       </StyledSubHeader>
     </div>
   );
