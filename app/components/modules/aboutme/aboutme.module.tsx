@@ -14,8 +14,8 @@ export const AboutMe = (props: Props) => {
   return (
     <div className="flex flex-wrap  max-w-270 gap-5 justify-center sm:justify-between">
       <div className="flex flex-col flex-wrap max-w-lg md:order-1 order-2 ">
-        <StyledHeader>Nasir Movlamov</StyledHeader>
-        <StyledSubHeader>
+        <h1 className="mb-1 text-black dark:text-white text-5xl">Nasir Movlamov</h1>
+        <h2 className="mb-2 text-black dark:text-white text-xl">
           Software Engineer at{' '}
           <a
             target={'_blank'}
@@ -24,12 +24,13 @@ export const AboutMe = (props: Props) => {
           >
             ABB
           </a>
-        </StyledSubHeader>
-        <StyledSideParagraph>
-          <em>Physics</em> and <em> Martial arts</em> {'  '} enthusiast. <br />
+        </h2>
+
+        <p className="text-black dark:text-white">
+          Physics and Martial arts{'  '} enthusiast. <br />
           learning / talking about javascript, typescript, linux, react, physics
           <br />
-        </StyledSideParagraph>
+        </p>
       </div>
 
       <div className="flex md:order-2 order-1">

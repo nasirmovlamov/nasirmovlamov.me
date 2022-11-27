@@ -1,21 +1,17 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react';
 
-import { CustomThemeContext } from '@store/context/theme.context'
-import { StyledThemeChangerBtn } from './theme-changer.styled'
-import { SvgThemeElement } from './elements/svg-theme.element'
+import { CustomThemeContext } from '@store/context/theme.context';
+import { StyledThemeChangerBtn } from './theme-changer.styled';
+import { SvgThemeElement } from './elements/svg-theme.element';
 
-type Props = {}
+type Props = {};
 
 export const ThemeChanger = (props: Props) => {
-  const { isDarkMode, changeTheme } = useContext<any>(CustomThemeContext);
-
-
+  const { darkMode, toggleTheme } = useContext(CustomThemeContext);
 
   return (
-    <StyledThemeChangerBtn darkMode={isDarkMode} onClick={changeTheme}>
-      <SvgThemeElement theme={isDarkMode} />
+    <StyledThemeChangerBtn darkMode={darkMode === 'light' ? false : true} onClick={toggleTheme}>
+      <SvgThemeElement theme={darkMode === 'light' ? false : true} />
     </StyledThemeChangerBtn>
   );
-}
-
-
+};

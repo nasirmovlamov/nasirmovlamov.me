@@ -5,6 +5,7 @@ import {
 import { useEffect, useState } from 'react';
 
 import { SpotifyPost } from '@components/shared/posts/SpotifyPost';
+import { getUserToken } from '@helpers/api/spotifyAuth';
 import axios from 'axios';
 import type { NextPage } from 'next';
 
@@ -12,22 +13,20 @@ const Spotify: NextPage = () => {
   const [spotifyData, setSpotifyData] = useState<any>({ items: [] });
   const [loading, setLoading] = useState<'idle' | 'pending' | 'error'>('pending');
 
-  const getSpotifyData: any = async () => {
+  const getSpotifyData: any = async (token: string) => {
     try {
       setLoading('pending');
+      const token = await getUserToken();
       const request = await axios.get(
         'https://api.spotify.com/v1/me/player/recently-played?limit=10',
         {
           headers: {
-            Authorization:
-              'Bearer ' +
-              'BQASyb_c6N6W2YPdKyFBVXvan9mM-JJF0mBEYK9GM48NQfZiQmUeLR7nLhTQ5E7KieqN0PvoWMRJoIusMdfUbCwGR2YtoW6neAHtcsubdWHL4H8LfU6ojxEmdDg1qNj0jiNDTH-l_IVHeZ0oHxZEGyigDZWp8ZaPsSXeYgl7yQpTpPBviQPHB4ahBP_DdqraxmgPQ2f7',
+            Authorization: 'Bearer ' + token,
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
         },
       );
-      console.log(request.data);
       setSpotifyData(request.data);
       setLoading('idle');
       return request.data;
