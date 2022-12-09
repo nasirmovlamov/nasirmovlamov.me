@@ -48,6 +48,7 @@ export const CustomThemeProvider = ({ children }: Props) => {
   useLayoutEffect(() => {
     const root = window.document.documentElement;
     const localTheme = localStorage.getItem('color-theme');
+    console.log(localTheme);
     if (localTheme === 'dark') {
       root.classList.add('dark');
       setDarkMode('dark');
@@ -55,6 +56,11 @@ export const CustomThemeProvider = ({ children }: Props) => {
     if (localTheme === 'light') {
       root.classList.add('light');
       setDarkMode('light');
+    }
+
+    if (localTheme === null) {
+      root.classList.add('dark');
+      setDarkMode('dark');
     }
   }, []);
 
