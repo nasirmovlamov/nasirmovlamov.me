@@ -1,3 +1,4 @@
+import { getNowPlaying } from '@helpers/api/spotify';
 import { getUserToken } from '@helpers/api/spotifyAuth';
 import { StyledHr, SytledText } from '@styled-components/styled-components/styled-micro-components';
 import axios from 'axios';
@@ -16,13 +17,7 @@ const FooterModule = (props: Props) => {
     try {
       setLoading('pending');
       const token = await getUserToken();
-      const request = await axios.get('https://api.spotify.com/v1/me/player/currently-playing', {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-      });
+      const request: any = await getNowPlaying();
       console.log(request.data);
       setSpotifyData(request.data);
       setLoading('idle');
