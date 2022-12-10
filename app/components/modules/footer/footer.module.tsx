@@ -15,6 +15,7 @@ const FooterModule = (props: Props) => {
 
   const getSpotifyData: any = async () => {
     try {
+      
       setLoading('pending');
       const {
         data: { access_token: token },
