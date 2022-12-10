@@ -86,15 +86,22 @@ const FooterModule = (props: Props) => {
             </div>
           )
         ) : (
-          <div className="flex align-middle gap-2 mb-4">
-            <SVG_spotify /> Spotify Not Playing
+          <div className="mb-4">
+            Currently not listening, go{' '}
+            <Link href="/spotify" passHref>
+              <span className='text-base cursor-pointer'>recently</span>
+            </Link>
           </div>
         )}
       </div>
       <div className="flex flex-wrap gap-x-36 ">
         <div>
           <Link href="/spotify" passHref>
-            <StyledFooterLink>Spotify</StyledFooterLink>
+            <StyledFooterLink>
+              <div className="flex gap-2">
+                <SVG_spotify /> Recently Played
+              </div>
+            </StyledFooterLink>
           </Link>
 
           <Link href="/" passHref>
