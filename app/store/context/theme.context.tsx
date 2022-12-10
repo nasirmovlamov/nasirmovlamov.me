@@ -68,7 +68,7 @@ export const CustomThemeProvider = ({ children }: Props) => {
     <CustomThemeContext.Provider value={{ isMenuOpen, toggleMenu, toggleTheme, darkMode }}>
       <StyledThemeProvider theme={darkMode === 'light' ? lightTheme : darkTheme}>
         <GlobalStyle />
-        <div className="min-h-screen mx-auto max-w-5xl px-4">{children}</div>
+        <div className="min-h-screen mx-auto max-w-2xl ">{children}</div>
       </StyledThemeProvider>
     </CustomThemeContext.Provider>
   );

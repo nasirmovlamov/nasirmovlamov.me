@@ -44,7 +44,7 @@ const Spotify: NextPage = () => {
 
   return (
     <>
-      <div className="flex flex-col flex-wrap min-w-270">
+      <div className="flex flex-col flex-wrap max-w-2xl">
         <StyledHeader>Spotify 🎶</StyledHeader>
         <StyledSideParagraph>Recently played spotify songs.</StyledSideParagraph>
 

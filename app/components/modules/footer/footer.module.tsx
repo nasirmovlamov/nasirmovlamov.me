@@ -15,7 +15,6 @@ const FooterModule = (props: Props) => {
 
   const getSpotifyData: any = async () => {
     try {
-      
       setLoading('pending');
       const {
         data: { access_token: token },
@@ -43,37 +42,18 @@ const FooterModule = (props: Props) => {
   }, []);
 
   return (
-    <div className="flex flex-col w-full  md:min-w-270 my-10">
+    <div className="flex flex-col w-full  my-10 max-w-2xl">
       <StyledHr />
-
-      <div className="flex flex-wrap gap-x-36 ">
-        <div>
-          {loading === 'pending' ? (
-            <div className="flex gap-2">
-              <SVG_spotify /> <span> Loading...</span>
-            </div>
-          ) : spotifyData ? (
-            spotifyData.is_playing ? (
-              <div className="mb-2">
-                <a href={spotifyData.item.external_urls.spotify} rel="noreferrer" target="_blank">
-                  <small className="text-xs"> Playing </small>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <img
-                      style={{ borderRadius: '50%' }}
-                      width={30}
-                      src={spotifyData.item.album.images[0].url}
-                      alt="Spotify Music"
-                    />
-                    <SytledText> {spotifyData.item.album.artists[0].name} </SytledText> -{' '}
-                    <SytledText bold white_2>
-                      {spotifyData.item.name}
-                    </SytledText>
-                  </div>
-                </a>
-              </div>
-            ) : (
-              <div className="mb-2">
-                <small className="text-xs"> Spotify Paused </small>
+      <div className="w-full">
+        {loading === 'pending' ? (
+          <div className="flex gap-2">
+            <SVG_spotify /> <span> Loading...</span>
+          </div>
+        ) : spotifyData ? (
+          spotifyData.is_playing ? (
+            <div className="mb-2">
+              <a href={spotifyData.item.external_urls.spotify} rel="noreferrer" target="_blank">
+                <small className="text-xs"> Playing </small>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <img
                     style={{ borderRadius: '50%' }}
@@ -86,14 +66,33 @@ const FooterModule = (props: Props) => {
                     {spotifyData.item.name}
                   </SytledText>
                 </div>
-              </div>
-            )
-          ) : (
-            <div className="flex align-middle gap-2 mb-4">
-              <SVG_spotify /> Spotify Not Playing
+              </a>
             </div>
-          )}
-
+          ) : (
+            <div className="mb-2">
+              <small className="text-xs"> Spotify Paused </small>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <img
+                  style={{ borderRadius: '50%' }}
+                  width={30}
+                  src={spotifyData.item.album.images[0].url}
+                  alt="Spotify Music"
+                />
+                <SytledText> {spotifyData.item.album.artists[0].name} </SytledText> -{' '}
+                <SytledText bold white_2>
+                  {spotifyData.item.name}
+                </SytledText>
+              </div>
+            </div>
+          )
+        ) : (
+          <div className="flex align-middle gap-2 mb-4">
+            <SVG_spotify /> Spotify Not Playing
+          </div>
+        )}
+      </div>
+      <div className="flex flex-wrap gap-x-36 ">
+        <div>
           <Link href="/spotify" passHref>
             <StyledFooterLink>Spotify</StyledFooterLink>
           </Link>

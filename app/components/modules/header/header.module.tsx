@@ -17,7 +17,7 @@ export const HeaderModule: React.FC = (props: Props) => {
 
   return (
     <>
-      <div className="relative flex items-center justify-between pt-10 pb-10  md:pb-20 px-0 max-w-6xl">
+      <div className="relative flex items-center justify-between pt-10 pb-10   px-0 max-w-2xl sm:pb-16">
         <button
           onClick={toggleMenu}
           data-collapse-toggle="navbar-default"

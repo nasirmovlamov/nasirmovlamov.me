@@ -16,14 +16,7 @@ export const AboutMe = (props: Props) => {
       <div className="flex flex-col flex-wrap max-w-lg md:order-1 order-2 ">
         <h1 className="mb-1 text-black dark:text-white text-5xl">Nasir Movlamov</h1>
         <h2 className="mb-2 text-black dark:text-white text-xl">
-          Software Engineer at{' '}
-          <a
-            target={'_blank'}
-            rel="noopener noreferrer"
-            href="https://www.linkedin.com/company/the-bank-abb/mycompany/"
-          >
-            ABB
-          </a>
+          Software Engineer at <span className="font-semibold">ABB</span>
         </h2>
 
         <p className="text-black dark:text-white">
