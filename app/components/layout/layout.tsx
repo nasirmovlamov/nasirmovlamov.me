@@ -1,16 +1,18 @@
+import { GlobalProvider } from '@store/context/global.context';
 import React, { ReactElement, ReactFragment, useContext, useState } from 'react';
 
-import { CustomThemeProvider } from '@store/context/theme.context';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
+// Create a client
+const queryClient = new QueryClient();
 type Props = {
   children: ReactFragment;
 };
 
 export const Layout = ({ children }: Props) => {
-
   return (
-    <CustomThemeProvider>
-        {children}
-    </CustomThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <GlobalProvider>{children}</GlobalProvider>
+    </QueryClientProvider>
   );
 };

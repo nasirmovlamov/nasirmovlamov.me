@@ -31,9 +31,15 @@
       "@styled-components/*": ["./app/styles/styled-components/*"],
       "@routes/*": ["./app/routes/*"],
       "@data/*": ["./app/data/*"],
-      "@media/*": ["./app/styles/media/*"],
+      "@media/*": ["./app/styles/media/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "app/styles/media/icons/svg-menu.jsx"],  
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "app/styles/media/icons/svg-menu.jsx",
+    "app/components/shared/LanguageChanger/elements/lang.element.tsx"
+  ],
   "exclude": ["node_modules"]
 }

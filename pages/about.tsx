@@ -5,13 +5,15 @@ import {
 } from '@styled-components/styled-components/styled-micro-components';
 
 import type { NextPage } from 'next';
+import { useTranslation } from 'react-i18next';
 
 const About: NextPage = () => {
+  const { t } = useTranslation();
   return (
-    <div className="flex flex-wrap justify-between max-w-270 gap-5">
-      <StyledHeader> About Me</StyledHeader>
+    <div className="flex flex-wrap justify-between max-w-270">
+      <StyledHeader> {t('about')}</StyledHeader>
       <StyledSubHeader fontSize="1.5rem" marginTop="30px">
-        Links
+        {t('links')}
       </StyledSubHeader>
       <ul style={{ listStyle: 'none' }}>
         <li>
@@ -21,35 +23,23 @@ const About: NextPage = () => {
           Github : <a href="https://github.com/nasirmovlamov"> @nasirmovlamov</a>
         </li>
         <li>
-          Website : <a href="https://nasirmovlamov.me">https://nasirmovlamov.me</a>
-        </li>
-        <li>
           LinkedIn : <a href="https://linkedin.com/nasirmovlamov"> @nasirmovlamov</a>
         </li>
       </ul>
 
       <StyledSubHeader fontSize="1.5rem" marginTop="30px">
-        Job title
+        {t('education')}
       </StyledSubHeader>
 
-      <StyledParagraph>Nasir Movlamov, Software Engineer at ABB</StyledParagraph>
+      <StyledParagraph>{t('educationInfo')}</StyledParagraph>
 
-      <StyledSubHeader fontSize="1.5rem" marginTop="30px">
-        Education
-      </StyledSubHeader>
-
-      <StyledParagraph>
-        I have graduated from ASOIU with a BS in Computer Engineering. I am studying a MS in
-        Artificial Intelligence at ASOIU
-      </StyledParagraph>
-
-      <StyledSubHeader fontSize="1.5rem" marginTop="30px">
+      {/* <StyledSubHeader fontSize="1.5rem" marginTop="30px">
         Research
       </StyledSubHeader>
 
       <StyledParagraph>
         Data encryption and vulnerability analysis at software infrastructures
-      </StyledParagraph>
+      </StyledParagraph> */}
     </div>
   );
 };

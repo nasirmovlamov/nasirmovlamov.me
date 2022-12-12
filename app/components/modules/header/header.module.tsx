@@ -2,19 +2,20 @@ import React, { useContext } from 'react';
 
 import { ThemeChanger } from '@components/shared/ThemeComponent/theme-changer.shared';
 import { usePathBoolReturner } from '@helpers/hooks/usePathBoolReturner';
-import { CustomThemeContext } from '@store/context/theme.context';
 import {
   StyledHeaderLink,
   StyledHeaderLinkFirst,
 } from '@styled-components/styled-components/styled-micro-components';
 import Link from 'next/link';
-
+import { GlobalContext } from '@store/context/global.context';
+import { LangChanger } from '@components/shared/LanguageChanger/lang-changer.shared';
+import { useTranslation } from 'react-i18next';
 type Props = {};
 
 export const HeaderModule: React.FC = (props: Props) => {
   const { isRoute } = usePathBoolReturner();
-  const { darkMode, isMenuOpen, toggleMenu } = useContext(CustomThemeContext);
-
+  const { darkMode, isMenuOpen, toggleMenu, lang } = useContext(GlobalContext);
+  const { t, i18n } = useTranslation('translation');
   return (
     <>
       <div className="relative flex items-center justify-between pt-10 pb-10   px-0 max-w-2xl sm:pb-16">
@@ -79,24 +80,34 @@ export const HeaderModule: React.FC = (props: Props) => {
               bold={isRoute.home}
               className="pl-0"
             >
-              Home
+              {t('home')}
             </StyledHeaderLinkFirst>
           </Link>
 
           <Link href="/about" passHref>
             <StyledHeaderLink isDarkMode={darkMode === 'dark' ? true : false} bold={isRoute.about}>
-              About Me
+              {t('about')}
+            </StyledHeaderLink>
+          </Link>
+          <Link href="/dashboard" passHref>
+            <StyledHeaderLink
+              isDarkMode={darkMode === 'dark' ? true : false}
+              bold={isRoute.dashboard}
+            >
+              {t('dashboard')}
             </StyledHeaderLink>
           </Link>
 
           <Link href="/blog" passHref>
             <StyledHeaderLink isDarkMode={darkMode === 'dark' ? true : false} bold={isRoute.blog}>
-              Blog
+              {t('blog')}
             </StyledHeaderLink>
           </Link>
         </div>
-
-        <ThemeChanger />
+        <div className="flex gap-2">
+          <ThemeChanger />
+          <LangChanger />
+        </div>
       </div>
     </>
   );

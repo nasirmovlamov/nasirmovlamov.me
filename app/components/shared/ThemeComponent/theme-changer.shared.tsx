@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react';
 
-import { CustomThemeContext } from '@store/context/theme.context';
+import { GlobalContext } from '@store/context/global.context';
 import { StyledThemeChangerBtn } from './theme-changer.styled';
 import { SvgThemeElement } from './elements/svg-theme.element';
 
 type Props = {};
 
 export const ThemeChanger = (props: Props) => {
-  const { darkMode, toggleTheme } = useContext(CustomThemeContext);
+  const { darkMode, toggleTheme } = useContext(GlobalContext);
 
   return (
     <StyledThemeChangerBtn darkMode={darkMode === 'light' ? false : true} onClick={toggleTheme}>

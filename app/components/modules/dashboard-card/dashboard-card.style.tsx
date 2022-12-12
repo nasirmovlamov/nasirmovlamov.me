@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const StyledDashboardCard = styled.div`
-  width: 410px;
+  width: 330px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   row-gap: 8px;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border-radius: 7px;
   background-color: ${({ theme }) => theme.colors.black_1};
   border-color: ${({ theme }) => theme.colors.white_1};
@@ -19,7 +19,7 @@ export const StyledDashboardCard = styled.div`
 
   }
   .card-view-count {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     text-align: start ;
     font-weight: 600;
   }

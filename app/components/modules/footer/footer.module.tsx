@@ -4,6 +4,7 @@ import { StyledHr, SytledText } from '@styled-components/styled-components/style
 import axios from 'axios';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { SVG_spotify } from '../../../styles/media/icons/svg-spotify';
 import { StyledFooterLink } from './footer.style';
 
@@ -12,7 +13,7 @@ type Props = {};
 const FooterModule = (props: Props) => {
   const [loading, setLoading] = useState<'idle' | 'pending' | 'error'>('pending');
   const [spotifyData, setSpotifyData] = useState<any>({});
-
+  const { t } = useTranslation();
   const getSpotifyData: any = async () => {
     try {
       setLoading('pending');
@@ -47,13 +48,13 @@ const FooterModule = (props: Props) => {
       <div className="w-full">
         {loading === 'pending' ? (
           <div className="flex gap-2">
-            <SVG_spotify /> <span> Loading...</span>
+            <SVG_spotify /> <span> {t('loading')}</span>
           </div>
         ) : spotifyData ? (
           spotifyData.is_playing ? (
             <div className="mb-2">
               <a href={spotifyData.item.external_urls.spotify} rel="noreferrer" target="_blank">
-                <small className="text-xs"> Playing </small>
+                <small className="text-xs"> {t('playing')} </small>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <img
                     style={{ borderRadius: '50%' }}
@@ -70,7 +71,7 @@ const FooterModule = (props: Props) => {
             </div>
           ) : (
             <div className="mb-2">
-              <small className="text-xs"> Spotify Paused </small>
+              <small className="text-xs"> {t('spotifyPaused')}</small>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <img
                   style={{ borderRadius: '50%' }}
@@ -87,9 +88,9 @@ const FooterModule = (props: Props) => {
           )
         ) : (
           <div className="mb-4">
-            Currently not listening, go{' '}
+            {t('currentlyNotListening')},{' '}
             <Link href="/spotify" passHref>
-              <span className='text-base cursor-pointer'>recently</span>
+              <span className="text-base cursor-pointer">{t('goLatests')}</span>
             </Link>
           </div>
         )}
@@ -99,21 +100,21 @@ const FooterModule = (props: Props) => {
           <Link href="/spotify" passHref>
             <StyledFooterLink>
               <div className="flex gap-2">
-                <SVG_spotify /> Recently Played
+                <SVG_spotify /> {t('recentlyPlayed')}
               </div>
             </StyledFooterLink>
           </Link>
 
           <Link href="/" passHref>
-            <StyledFooterLink>Home</StyledFooterLink>
+            <StyledFooterLink>{t('home')}</StyledFooterLink>
           </Link>
 
           <Link href="about" passHref>
-            <StyledFooterLink>About</StyledFooterLink>
+            <StyledFooterLink>{t('about')}</StyledFooterLink>
           </Link>
 
           <Link href="/blog" passHref>
-            <StyledFooterLink>Blog</StyledFooterLink>
+            <StyledFooterLink>{t('blog')}</StyledFooterLink>
           </Link>
         </div>
 
