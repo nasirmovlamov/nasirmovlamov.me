@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 
 import { GlobalContext } from '@store/context/global.context';
-import { StyledLangChangerBtn } from './Lang-changer.styled';
+import { StyledLangChangerBtn } from './lang-changer.styled';
 
 type Props = {};
 
