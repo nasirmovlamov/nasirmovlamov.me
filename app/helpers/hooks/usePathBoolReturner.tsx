@@ -10,6 +10,7 @@ export const usePathBoolReturner = () => {
 
   const [isRoute, setIsRoute] = useState({
     home: true,
+    gpt: false,
     guestbook: false,
     dashboard: false,
     blog: false,
@@ -20,6 +21,7 @@ export const usePathBoolReturner = () => {
 
   const defaultFalseRoute = {
     home: false,
+    gpt: false,
     guestbook: false,
     dashboard: false,
     blog: false,
@@ -40,6 +42,12 @@ export const usePathBoolReturner = () => {
         setIsRoute({
           ...defaultFalseRoute,
           guestbook: true,
+        });
+        break;
+      case '/chatgpt':
+        setIsRoute({
+          ...defaultFalseRoute,
+          gpt: true,
         });
         break;
       case '/dashboard':

@@ -9,11 +9,12 @@ import { getUserToken } from '@helpers/api/spotifyAuth';
 import axios from 'axios';
 import type { NextPage } from 'next';
 import { getAccessToken } from '@helpers/api/spotify';
+import { useTranslation } from 'react-i18next';
 
 const Spotify: NextPage = () => {
   const [spotifyData, setSpotifyData] = useState<any>({ items: [] });
   const [loading, setLoading] = useState<'idle' | 'pending' | 'error'>('pending');
-
+  const { t } = useTranslation();
   const getSpotifyData: any = async (token: string) => {
     try {
       setLoading('pending');
@@ -46,7 +47,7 @@ const Spotify: NextPage = () => {
     <>
       <div className="flex flex-col flex-wrap max-w-2xl">
         <StyledHeader>Spotify 🎶</StyledHeader>
-        <StyledSideParagraph>Recently played spotify songs.</StyledSideParagraph>
+        <StyledSideParagraph>{t('recentlyPlayedSpotifySongs')}</StyledSideParagraph>
 
         <div className="flex flex-col mt-7 gap-5">
           {loading === 'pending'

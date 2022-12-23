@@ -13,6 +13,7 @@ import { useTranslation } from 'react-i18next';
 type Props = {};
 
 export const HeaderModule: React.FC = (props: Props) => {
+
   const { isRoute } = usePathBoolReturner();
   const { darkMode, isMenuOpen, toggleMenu, lang } = useContext(GlobalContext);
   const { t, i18n } = useTranslation('translation');
@@ -57,6 +58,13 @@ export const HeaderModule: React.FC = (props: Props) => {
               </Link>
             </li>
             <li>
+              <Link href="/chatgpt" passHref>
+                <span className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                  ChatGPT
+                </span>
+              </Link>
+            </li>
+            <li>
               <Link href="/about" passHref>
                 <span className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                   About
@@ -84,6 +92,11 @@ export const HeaderModule: React.FC = (props: Props) => {
             </StyledHeaderLinkFirst>
           </Link>
 
+          <Link href="/chatgpt" passHref>
+            <StyledHeaderLink isDarkMode={darkMode === 'dark' ? true : false} bold={isRoute.gpt}>
+              ChatGPT
+            </StyledHeaderLink>
+          </Link>
           <Link href="/about" passHref>
             <StyledHeaderLink isDarkMode={darkMode === 'dark' ? true : false} bold={isRoute.about}>
               {t('about')}
