@@ -8,16 +8,17 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import nasirmovlamov2 from '../../../styles/media/images/nasirmovlamov2.jpeg';
 import { StyledPersonImage } from './aboutme.styled';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
+import { GlobalContext } from '@store/context/global.context';
 
 type Props = {};
 
 export const AboutMe = (props: Props) => {
   const { t } = useTranslation();
-
+  const { lang } = useContext(GlobalContext);
   useEffect(() => {
     console.log(t);
-  }, [t]);
+  }, [lang]);
 
   return (
     <div className="flex flex-wrap  max-w-270 gap-5 justify-center sm:justify-between">
