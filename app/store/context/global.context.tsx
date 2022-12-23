@@ -91,8 +91,8 @@ export const GlobalProvider = ({ children }: Props) => {
       setLang('en');
       i18n.changeLanguage('en');
     }
-
-    if (localLang === null) {
+    console.log(localLang);
+    if (!localLang) {
       setLang('az');
       i18n.changeLanguage('az');
     }
