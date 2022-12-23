@@ -8,11 +8,17 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import nasirmovlamov2 from '../../../styles/media/images/nasirmovlamov2.jpeg';
 import { StyledPersonImage } from './aboutme.styled';
+import { useEffect } from 'react';
 
 type Props = {};
 
 export const AboutMe = (props: Props) => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    console.log(t);
+  }, [t]);
+
   return (
     <div className="flex flex-wrap  max-w-270 gap-5 justify-center sm:justify-between">
       <div className="flex flex-col flex-wrap max-w-lg md:order-1 order-2 ">
