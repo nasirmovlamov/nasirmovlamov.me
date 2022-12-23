@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 const { Configuration, OpenAIApi } = require('openai');
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 });
 
 const openai = new OpenAIApi(configuration);
