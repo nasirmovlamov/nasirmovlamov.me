@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 const { Configuration, OpenAIApi } = require('openai');
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 });
 
 const openai = new OpenAIApi(configuration);
@@ -24,8 +24,8 @@ const Gpt: NextPage = () => {
 
   const onSubmit = async (data: any) => {
     setLoading(true);
-    const completion = await openai.Completation.create({
-      engine: 'davinci',
+    const completion = await openai.createCompletion({
+      model: 'text-davinci-003',
       prompt: data.message,
       temperature: 0.6,
       max_tokens: 4000,
