@@ -22,9 +22,9 @@ const About: NextPage = () => {
         <li>
           Github : <a href="https://github.com/nasirmovlamov"> @nasirmovlamov</a>
         </li>
-        <li>
+        {/* <li>
           LinkedIn : <a href="https://linkedin.com/nasirmovlamov"> @nasirmovlamov</a>
-        </li>
+        </li> */}
       </ul>
 
       <StyledSubHeader fontSize="1.5rem" marginTop="30px">

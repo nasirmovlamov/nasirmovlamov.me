@@ -24,10 +24,13 @@ export const AboutMe = (props: Props) => {
     <div className="flex flex-wrap  max-w-270 gap-5 justify-center sm:justify-between">
       <div className="flex flex-col flex-wrap max-w-lg md:order-1 order-2 ">
         <h1 className="mb-1 text-black dark:text-white text-5xl">{t('myName')}</h1>
-        <p className="text-black dark:text-white">
-          {t('myEnthusiasm')} <br />
-          {t('hobby')} <br />
-          <br />
+        <h4 className="mb-1 text-black dark:text-white text-[18px]">{t('myJob')}</h4>
+        <p className="text-black dark:text-white text-xs">
+          <em>
+            {t('myEnthusiasm')} <br />
+            {t('hobby')} <br />
+            <br />
+          </em>
         </p>
       </div>
 

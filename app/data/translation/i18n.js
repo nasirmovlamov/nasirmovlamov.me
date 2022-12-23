@@ -54,7 +54,7 @@ export const resources = {
       blog: 'Blog',
       blogInfo: 'Everything I enjoyed during learning',
       myName: 'Nasir Movlamov',
-      myJob: 'Software engineer at ABB',
+      myJob: 'Software engineer',
       myEnthusiasm: 'physics and martial arts enthusiast.',
       hobby: 'learning / talking about js, ts, linux, react, open source etc.',
       loading: 'Loading...',
