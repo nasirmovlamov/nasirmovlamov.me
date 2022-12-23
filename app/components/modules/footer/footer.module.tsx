@@ -43,7 +43,7 @@ const FooterModule = (props: Props) => {
   }, []);
 
   return (
-    <div className="flex flex-col w-full  my-10 max-w-2xl">
+    <div className="flex flex-col w-full  my-10 max-w-2xl px-3">
       <StyledHr />
       <div className="w-full">
         {loading === 'pending' ? (

@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 const { Configuration, OpenAIApi } = require('openai');
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 });
 
 const openai = new OpenAIApi(configuration);
@@ -48,10 +48,10 @@ const Gpt: NextPage = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="max-w-2xl">
+      <div className="max-w-2xl mx-3">
         <div
           ref={divRef}
-          className="h-[calc(100vh-600px)] w-full bg-gray-800 rounded-md p-5 overflow-y-auto"
+          className="h-[450px] sm:h-[calc(100vh-600px)] w-full bg-gray-800 rounded-md p-5 overflow-y-auto"
         >
           <div className="text-gray-400 font-bold">{t('questionsAndAnswers')}</div>
           {messageData.map((item: any) => {
