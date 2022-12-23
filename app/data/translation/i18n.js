@@ -14,7 +14,7 @@ export const resources = {
       myName: 'Nasir Mövlamov',
       myJob: 'Proqram təminatı mühəndisi üzrə mütəxəssis',
       myEnthusiasm: 'fizika və döyüş sənətləri həvəskarı.',
-      hobby: 'js, ts, linux, react, open source və s. öyrənmək / söhbətləşmək.',
+      hobby: 'js, ts, linux, react, open source və s.',
       loading: 'Yüklənir...',
       playing: 'Oynanır',
       spotifyPaused: 'Musiqi dayandırıldı',
