@@ -5,13 +5,14 @@ import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 const { Configuration, OpenAIApi } = require('openai');
-const configuration = new Configuration({
-  apiKey: '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',
-});
-
-const openai = new OpenAIApi(configuration);
 
 const Gpt: NextPage = () => {
+  const configuration = new Configuration({
+    apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  });
+
+  const openai = new OpenAIApi(configuration);
+
   const divRef = useRef<HTMLDivElement>(null);
   const [messageData, setMessageData] = useState<any>([]);
   const [loading, setLoading] = useState(false);
