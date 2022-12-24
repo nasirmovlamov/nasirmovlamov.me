@@ -59,9 +59,9 @@ const Gpt: NextPage = () => {
             return (
               <div className="w-full p-2 " key={item.question}>
                 <div className="text-gray-400 font-bold">{t('question')}</div>
-                <div className="text-white!">- {item.question}</div>
+                <div className="text-white">- {item.question}</div>
                 <div className="text-gray-400 font-bold">{t('answer')}</div>
-                <div className="text-white!">- {item.answer}</div>
+                <div className="text-white">- {item.answer}</div>
               </div>
             );
           })}
