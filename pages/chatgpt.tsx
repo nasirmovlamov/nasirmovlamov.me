@@ -70,7 +70,7 @@ const Gpt: NextPage = () => {
           <input
             placeholder={t('askAnyQuestion')!}
             disabled={loading ? true : false}
-            {...register('message', { required: true, maxLength: 80 })}
+            {...register('message', { required: true, maxLength: 4080 })}
             type="text"
             className="text-[10px] sm:text-base w-full bg-gray-300 outline-none dark:text-black p-2"
           />
