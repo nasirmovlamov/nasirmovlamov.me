@@ -92,11 +92,11 @@ export const HeaderModule: React.FC = (props: Props) => {
             </StyledHeaderLinkFirst>
           </Link>
 
-          <Link href="/chatgpt" passHref>
+          {/* <Link href="/chatgpt" passHref>
             <StyledHeaderLink isDarkMode={darkMode === 'dark' ? true : false} bold={isRoute.gpt}>
               ChatGPT
             </StyledHeaderLink>
-          </Link>
+          </Link> */}
           <Link href="/about" passHref>
             <StyledHeaderLink isDarkMode={darkMode === 'dark' ? true : false} bold={isRoute.about}>
               {t('about')}
