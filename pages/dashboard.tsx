@@ -15,17 +15,17 @@ const Dashboard: NextPage = () => {
         {/* <YouTube /> */}
         <div className="flex flex-wrap mt-2 gap-2 ">
           <DashboardCard
-            link="https://www.youtube.com/@techxana9447"
+            link="https://www.youtube.com/@techxana"
             title={t('ytSubscribers')}
             viewCount={561}
           />
           <DashboardCard
-            link="https://www.youtube.com/@techxana9447"
+            link="https://www.youtube.com/@techxana"
             title={t('ytViews')}
             viewCount={'20,4 ' + t('thousand')}
           />
           <DashboardCard
-            link="https://www.youtube.com/@techxana9447"
+            link="https://www.youtube.com/@techxana"
             title={t('ytWatchTime')}
             viewCount={'1400 ' + t('hour')}
           />
