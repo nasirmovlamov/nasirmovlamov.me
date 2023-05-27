@@ -5,13 +5,13 @@ import Card from './Card';
 
 export const YouTube = () => {
   const { isLoading, error, data } = useQuery('/api/youtube', () =>
-    fetch('https://www.youtube.com/@techxana9447').then((res) => res.json()),
+    fetch('https://www.youtube.com/@techxana').then((res) => res.json()),
   );
   const subscriberCount = new Number(data?.subscriberCount);
   const viewCount = new Number(data?.viewCount);
-  const link = 'https://www.youtube.com/@techxana9447';
+  const link = 'https://www.youtube.com/@techxana';
   useEffect(() => {
-    axios.get('https://www.youtube.com/@techxana9447').then((res) => console.log(res));
+    axios.get('https://www.youtube.com/@techxana').then((res) => console.log(res));
   }, []);
 
   if (!data) {
