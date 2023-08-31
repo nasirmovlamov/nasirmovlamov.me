@@ -12,7 +12,7 @@ export const resources = {
       blog: 'Bloq',
       blogInfo: 'Öyrənən zaman zövq aldığım hər şey',
       myName: 'Nasir Mövlamov',
-      myJob: 'Proqram təminatı mühəndisi üzrə mütəxəssis',
+      myJob: 'Proqram təminatı mühəndisi',
       myEnthusiasm: 'fizika və döyüş sənətləri həvəskarı.',
       hobby: 'js, ts, linux, react, open source və s.',
       loading: 'Yüklənir...',
